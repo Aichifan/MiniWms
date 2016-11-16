@@ -1,6 +1,6 @@
 package ndm.miniwms.pojo;
 
-public class SotckInEntries {
+public class StockInEntries {
 	private Integer id; // 入库单明细id
 	private Integer inId; // 入库单id
 	private Integer itemId; // 商品id

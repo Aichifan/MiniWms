@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class SupplierDetails {
 	private Integer id; // 供应商id
@@ -17,6 +18,8 @@ public class SupplierDetails {
 	private String contactMsn; // 联系人Skype
 	private String contactDesc; // 联系人描述
 	private Integer companyId; // 公司id
+	private CompanyDetails companyDetails;
+	private List<StockIn> stockInList;
 
 	public Integer getId() {
 		return id;
