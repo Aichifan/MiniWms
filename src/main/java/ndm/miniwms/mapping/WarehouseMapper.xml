@@ -18,20 +18,32 @@
 	</select>
 
 	<delete id="delById" parameterType="java.lang.Integer">
-		delete from warehouse where id = #{id,jdbcType=INTEGER}
+		delete from warehouse where
+		id = #{id,jdbcType=INTEGER}
 	</delete>
 
 	<update id="update" parameterType="ndm.miniwms.pojo.CompanyDetails">
-
+		update warehouse
+		set
+		created=#{created},modified=#{modified},name=#{name},address=#{address},
+		description=#{description},contact_name=#{contactName},contact_tel=#{contactTel},
+		contact_fax=#{contactFax},contact_email=#{contactEmail},contact_qq=#{contactQq},
+		contact_msn=#{contactMsn},contact_desc=#{contactDesc}
+		where id =
+		#{id,jdbcType=INTEGER}
 	</update>
 
 	<insert id="add" parameterType="ndm.miniwms.pojo.CompanyDetails">
-		insert into warehouse (created, modified, name, address, description,
-		contact_name, contact_tel, contact_fax, contact_email, contact_qq,
+		insert into warehouse (created,
+		modified, name, address, description,
+		contact_name, contact_tel,
+		contact_fax, contact_email, contact_qq,
 		contact_msn,
-		contact_desc ) values (#{created}, #{modified}, #{name}, #{address},
+		contact_desc )
+		values (#{created}, #{modified}, #{name}, #{address},
 		#{description},
-		#{contactName}, #{contactTel}, #{contactFax}, #{contactEmail}, #{contactQq},
+		#{contactName}, #{contactTel}, #{contactFax}, #{contactEmail},
+		#{contactQq},
 		#{contactMsn},
 		#{contactDesc})
 	</insert>
