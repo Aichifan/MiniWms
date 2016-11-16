@@ -1,5 +1,5 @@
 package ndm.miniwms.dao;
 
-public class StockOutEntriesMapper {
+public interface StockOutEntriesMapper {
 
 }
