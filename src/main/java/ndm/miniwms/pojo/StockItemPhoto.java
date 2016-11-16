@@ -1,10 +1,12 @@
 package ndm.miniwms.pojo;
 
+import java.util.Date;
+
 public class StockItemPhoto {
 	private Integer id; // 商品图片id
 	private Integer itemId; // 商品id
 	private String path; // 路径
-	private String uploadDate; // 上传时间
+	private Date uploadDate; // 上传时间
 	private StockItem stockItem; 
 	
 	public Integer getId() {
@@ -31,12 +33,22 @@ public class StockItemPhoto {
 		this.path = path;
 	}
 
-	public String getUploadDate() {
+	public Date getUploadDate() {
 		return uploadDate;
 	}
 
-	public void setUploadDate(String uploadDate) {
+	public void setUploadDate(Date uploadDate) {
 		this.uploadDate = uploadDate;
 	}
+
+	public StockItem getStockItem() {
+		return stockItem;
+	}
+
+	public void setStockItem(StockItem stockItem) {
+		this.stockItem = stockItem;
+	}
+
+	
 
 }
