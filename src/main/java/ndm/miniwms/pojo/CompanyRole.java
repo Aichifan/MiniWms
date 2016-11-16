@@ -10,9 +10,6 @@ public class CompanyRole {
 	private Integer companyId; // 公司id
 	private CompanyDetails companyDetails;//公司对象
 
-	private CompanyDetails companyDetails;//公司对象
-
-	
 	public CompanyDetails getCompanyDetails() {
 		return companyDetails;
 	}

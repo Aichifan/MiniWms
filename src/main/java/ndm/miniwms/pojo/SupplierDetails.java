@@ -21,9 +21,6 @@ public class SupplierDetails {
 	private CompanyDetails companyDetails;
 	private List<StockIn> stockInList;
 
-	private CompanyDetails companyDetails;//公司
-	private List<StockIn> stockInList; //入库单
-
 	public CompanyDetails getCompanyDetails() {
 		return companyDetails;
 	}
