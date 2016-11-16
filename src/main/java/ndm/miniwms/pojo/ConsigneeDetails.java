@@ -22,6 +22,22 @@ public class ConsigneeDetails {
 	private CompanyDetails companyDetails; //公司
 	private List<StockOut> stockOutList; //出货单
 	
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<StockOut> getStockOutList() {
+		return stockOutList;
+	}
+
+	public void setStockOutList(List<StockOut> stockOutList) {
+		this.stockOutList = stockOutList;
+	}
+
 	public Integer getId() {
 		return id;
 	}

@@ -22,6 +22,46 @@ public class StockIn {
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户
 
+	public SupplierDetails getSupplierDetails() {
+		return supplierDetails;
+	}
+
+	public void setSupplierDetails(SupplierDetails supplierDetails) {
+		this.supplierDetails = supplierDetails;
+	}
+
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
+	public List<StockInEntries> getStockInEntriesList() {
+		return stockInEntriesList;
+	}
+
+	public void setStockInEntriesList(List<StockInEntries> stockInEntriesList) {
+		this.stockInEntriesList = stockInEntriesList;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
 	public Integer getId() {
 		return id;
 	}

@@ -26,6 +26,54 @@ public class StockItem {
 	private List<StockEntries> stockEntriesList;//库存变更记录
 	private List<StockInventory> stockInventoryList;//库存
 	private List<StockInEntries> stockInEntriesList;//入库明细
+	
+	public BrandDetails getBrandDetails() {
+		return brandDetails;
+	}
+
+	public void setBrandDetails(BrandDetails brandDetails) {
+		this.brandDetails = brandDetails;
+	}
+
+	public List<CategoryDetails> getCategoryDetailsList() {
+		return categoryDetailsList;
+	}
+
+	public void setCategoryDetailsList(List<CategoryDetails> categoryDetailsList) {
+		this.categoryDetailsList = categoryDetailsList;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<StockEntries> getStockEntriesList() {
+		return stockEntriesList;
+	}
+
+	public void setStockEntriesList(List<StockEntries> stockEntriesList) {
+		this.stockEntriesList = stockEntriesList;
+	}
+
+	public List<StockInventory> getStockInventoryList() {
+		return stockInventoryList;
+	}
+
+	public void setStockInventoryList(List<StockInventory> stockInventoryList) {
+		this.stockInventoryList = stockInventoryList;
+	}
+
+	public List<StockInEntries> getStockInEntriesList() {
+		return stockInEntriesList;
+	}
+
+	public void setStockInEntriesList(List<StockInEntries> stockInEntriesList) {
+		this.stockInEntriesList = stockInEntriesList;
+	}
 
 	public Integer getId() {
 		return id;

@@ -14,6 +14,22 @@ public class BrandDetails {
 	private List<StockItem> stockItemList; //商品
 
 	
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<StockItem> getStockItemList() {
+		return stockItemList;
+	}
+
+	public void setStockItemList(List<StockItem> stockItemList) {
+		this.stockItemList = stockItemList;
+	}
+
 	public Integer getId() {
 		return id;
 	}

@@ -36,6 +36,110 @@ public class CompanyDetails {
 	private List<StockCheck> stockCheckList; //公司盘点
 	private List<StockInventory> stockInventoryList; //库存
 	
+	public List<LocationDetails> getLocationDetailsList() {
+		return locationDetailsList;
+	}
+
+	public void setLocationDetailsList(List<LocationDetails> locationDetailsList) {
+		this.locationDetailsList = locationDetailsList;
+	}
+
+	public List<CompanyUser> getCompanyUserList() {
+		return companyUserList;
+	}
+
+	public void setCompanyUserList(List<CompanyUser> companyUserList) {
+		this.companyUserList = companyUserList;
+	}
+
+	public List<CompanyRole> getCompanyRoleList() {
+		return companyRoleList;
+	}
+
+	public void setCompanyRoleList(List<CompanyRole> companyRoleList) {
+		this.companyRoleList = companyRoleList;
+	}
+
+	public List<BrandDetails> getBrandDetailsList() {
+		return brandDetailsList;
+	}
+
+	public void setBrandDetailsList(List<BrandDetails> brandDetailsList) {
+		this.brandDetailsList = brandDetailsList;
+	}
+
+	public List<SupplierDetails> getSupplierDetailsList() {
+		return supplierDetailsList;
+	}
+
+	public void setSupplierDetailsList(List<SupplierDetails> supplierDetailsList) {
+		this.supplierDetailsList = supplierDetailsList;
+	}
+
+	public List<ConsigneeDetails> getConsigneeDetailsList() {
+		return consigneeDetailsList;
+	}
+
+	public void setConsigneeDetailsList(List<ConsigneeDetails> consigneeDetailsList) {
+		this.consigneeDetailsList = consigneeDetailsList;
+	}
+
+	public List<StockItem> getStockItemList() {
+		return stockItemList;
+	}
+
+	public void setStockItemList(List<StockItem> stockItemList) {
+		this.stockItemList = stockItemList;
+	}
+
+	public List<StockIn> getStockInList() {
+		return stockInList;
+	}
+
+	public void setStockInList(List<StockIn> stockInList) {
+		this.stockInList = stockInList;
+	}
+
+	public List<StockOut> getStockOutList() {
+		return stockOutList;
+	}
+
+	public void setStockOutList(List<StockOut> stockOutList) {
+		this.stockOutList = stockOutList;
+	}
+
+	public List<CustomizeReport> getCustomizeReportList() {
+		return customizeReportList;
+	}
+
+	public void setCustomizeReportList(List<CustomizeReport> customizeReportList) {
+		this.customizeReportList = customizeReportList;
+	}
+
+	public List<StockEntries> getStockEntriesList() {
+		return stockEntriesList;
+	}
+
+	public void setStockEntriesList(List<StockEntries> stockEntriesList) {
+		this.stockEntriesList = stockEntriesList;
+	}
+
+	public List<StockCheck> getStockCheckList() {
+		return stockCheckList;
+	}
+
+	public void setStockCheckList(List<StockCheck> stockCheckList) {
+		this.stockCheckList = stockCheckList;
+	}
+
+	public List<StockInventory> getStockInventoryList() {
+		return stockInventoryList;
+	}
+
+	public void setStockInventoryList(List<StockInventory> stockInventoryList) {
+		this.stockInventoryList = stockInventoryList;
+	}
+
 	public Integer getId() {
 		return id;
 	}

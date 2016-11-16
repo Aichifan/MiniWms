@@ -22,6 +22,46 @@ public class StockOut {
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户/创建人
 
+	public List<StockEntries> getStockEntriesList() {
+		return stockEntriesList;
+	}
+
+	public void setStockEntriesList(List<StockEntries> stockEntriesList) {
+		this.stockEntriesList = stockEntriesList;
+	}
+
+	public List<StockOutEntries> getStockOutEntriesList() {
+		return stockOutEntriesList;
+	}
+
+	public void setStockOutEntriesList(List<StockOutEntries> stockOutEntriesList) {
+		this.stockOutEntriesList = stockOutEntriesList;
+	}
+
+	public ConsigneeDetails getConsigneeDetails() {
+		return consigneeDetails;
+	}
+
+	public void setConsigneeDetails(ConsigneeDetails consigneeDetails) {
+		this.consigneeDetails = consigneeDetails;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
 	public Integer getId() {
 		return id;
 	}

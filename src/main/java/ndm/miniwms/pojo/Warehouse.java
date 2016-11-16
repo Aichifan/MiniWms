@@ -20,6 +20,22 @@ public class Warehouse {
 	
 	private CompanyDetails companyDetails;//公司
 	private List<LocationDetails> locationDetailsList; //创库库位
+	
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<LocationDetails> getLocationDetailsList() {
+		return locationDetailsList;
+	}
+
+	public void setLocationDetailsList(List<LocationDetails> locationDetailsList) {
+		this.locationDetailsList = locationDetailsList;
+	}
 
 	public Integer getId() {
 		return id;

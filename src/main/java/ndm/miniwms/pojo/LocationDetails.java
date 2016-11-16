@@ -21,6 +21,38 @@ public class LocationDetails {
 	private List<StockInEntries> sotckInEntriesList; //入库单明细
 	
 	
+	public Warehouse getWarehouse() {
+		return warehouse;
+	}
+
+	public void setWarehouse(Warehouse warehouse) {
+		this.warehouse = warehouse;
+	}
+
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<StockInEntries> getSotckInEntriesList() {
+		return sotckInEntriesList;
+	}
+
+	public void setSotckInEntriesList(List<StockInEntries> sotckInEntriesList) {
+		this.sotckInEntriesList = sotckInEntriesList;
+	}
+
 	public Integer getId() {
 		return id;
 	}

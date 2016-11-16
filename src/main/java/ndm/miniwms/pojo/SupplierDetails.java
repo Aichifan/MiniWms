@@ -22,6 +22,22 @@ public class SupplierDetails {
 	private CompanyDetails companyDetails;//公司
 	private List<StockIn> stockInList; //入库单
 
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<StockIn> getStockInList() {
+		return stockInList;
+	}
+
+	public void setStockInList(List<StockIn> stockInList) {
+		this.stockInList = stockInList;
+	}
+
 	public Integer getId() {
 		return id;
 	}

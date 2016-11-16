@@ -16,6 +16,22 @@ public class CustomizeReport {
 	private CompanyUser companyUser;//用户
 	private CompanyDetails companyDetails;//公司
 	
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
 	public Integer getId() {
 		return id;
 	}

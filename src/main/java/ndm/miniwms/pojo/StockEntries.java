@@ -24,6 +24,62 @@ public class StockEntries {
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户
 	
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
+	public StockItem getStockItem() {
+		return stockItem;
+	}
+
+	public void setStockItem(StockItem stockItem) {
+		this.stockItem = stockItem;
+	}
+
+	public StockIn getStockIn() {
+		return stockIn;
+	}
+
+	public void setStockIn(StockIn stockIn) {
+		this.stockIn = stockIn;
+	}
+
+	public StockOut getStockOut() {
+		return stockOut;
+	}
+
+	public void setStockOut(StockOut stockOut) {
+		this.stockOut = stockOut;
+	}
+
+	public StockCheck getStockCheck() {
+		return stockCheck;
+	}
+
+	public void setStockCheck(StockCheck stockCheck) {
+		this.stockCheck = stockCheck;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
 	public Integer getId() {
 		return id;
 	}

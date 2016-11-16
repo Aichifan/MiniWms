@@ -12,6 +12,14 @@ public class CompanyRole {
 	private CompanyDetails companyDetails;//公司对象
 
 	
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
 	public Integer getId() {
 		return id;
 	}
