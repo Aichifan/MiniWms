@@ -9,3 +9,4 @@
     <result column="company_id" property="companyId" jdbcType="VARCHAR" />
     <result column="company_details" property="companyDetails" jdbcType="VARCHAR" />
   </resultMap>
+  </mapper>
