@@ -15,11 +15,14 @@
 	</delete>
 
 	<update id="update" parameterType="ndm.miniwms.pojo.CategoryDetails">
-
+		update category_details
+		set name=#{name}, description=#{description}
+		where id = #{id,jdbcType=INTEGER}
 	</update>
 
 	<insert id="add" parameterType="ndm.miniwms.pojo.CategoryDetails">
-		insert into category_details (name, description) values (#{name},
+		insert into category_details
+		(name, description) values (#{name},
 		#{description})
 	</insert>
 </mapper>

@@ -16,12 +16,18 @@
 	</delete>
 
 	<update id="update" parameterType="ndm.miniwms.pojo.CompanyUser">
-
+		update company_user
+		set created=#{created},modified=#{modified},username=#{username},
+		password=#{password},address=#{address},tel=#{tel},cname=#{cname},
+		company_id=#{companyId}
+		where id = #{id,jdbcType=INTEGER}
 	</update>
 
 	<insert id="add" parameterType="ndm.miniwms.pojo.CompanyUser">
-		insert into company_user (created, modified, username, password, address,
-		tel, cname, company_id ) values (#{created}, #{modified}, #{username},
+		insert into company_user
+		(created, modified, username, password, address,
+		tel, cname, company_id
+		) values (#{created}, #{modified}, #{username},
 		#{password},
 		#{address}, #{tel}, #{cname}, #{companyId})
 	</insert>
