@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockCheck {
 	private Integer id;// 盘点id
@@ -9,6 +10,10 @@ public class StockCheck {
 	private Integer companyId;// 公司id
 	private Integer operatorId;// 操作人id
 	private String description;// 说明
+
+	private List<StockCheckEntries> stockCheckEntriesList;//盘点明细
+	private CompanyDetails companyDetails;//公司
+	private CompanyUser companyUser;//用户
 
 	public Integer getId() {
 		return id;

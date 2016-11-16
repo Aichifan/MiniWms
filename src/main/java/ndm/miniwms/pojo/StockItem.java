@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockItem {
 	private Integer id; // 商品id
@@ -18,6 +19,13 @@ public class StockItem {
 	private Integer companyId; // 公司id
 	private Integer locationId; // 库位id
 	private String description; // 备注
+
+	private BrandDetails brandDetails;//品牌
+	private List<CategoryDetails> categoryDetailsList;//种类
+	private CompanyDetails companyDetails;//公司
+	private List<StockEntries> stockEntriesList;//库存变更记录
+	private List<StockInventory> stockInventoryList;//库存
+	private List<StockInEntries> stockInEntriesList;//入库明细
 
 	public Integer getId() {
 		return id;

@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class CompanyUser {
 	private Integer id; // 用户id
@@ -13,6 +14,15 @@ public class CompanyUser {
 	private String cname; // 别名
 	private Integer companyId; // 公司id
 
+	private CompanyDetails companyDetails; //公司
+	private List<Warehouse> warehouseList; //仓库
+	private List<CustomizeReport> customizeReportList; //自定义报表
+	private List<StockCheck> stockCheckList; //盘点
+	private List<StockIn> stockInList; //入库单
+	private List<StockEntries> stockEntriesList; //库存变更记录
+	private List<StockOut>  stockOutsList; //出库单
+	private List<StockInventory> stockInventoryList;//库存
+	
 	public Integer getId() {
 		return id;
 	}

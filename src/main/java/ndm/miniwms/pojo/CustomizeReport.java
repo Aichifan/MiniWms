@@ -13,6 +13,9 @@ public class CustomizeReport {
 	private Integer usageCount;// 使用次数
 	private Integer companyId;// 使用公司id
 
+	private CompanyUser companyUser;//用户
+	private CompanyDetails companyDetails;//公司
+	
 	public Integer getId() {
 		return id;
 	}

@@ -9,6 +9,9 @@ public class CompanyRole {
 	private String name; // 名称
 	private Integer companyId; // 公司id
 
+	private CompanyDetails companyDetails;//公司对象
+
+	
 	public Integer getId() {
 		return id;
 	}

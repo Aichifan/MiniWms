@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockInventory {
 	private Integer id; // 库存id
@@ -18,6 +19,14 @@ public class StockInventory {
 	private String UDF4; // 自定义参数4
 	private String UDF5; // 自定义参数5
 	private String UDF6; // 自定义参数6
+
+	private CompanyDetails companyDetails;//公司
+	private List<LocationDetails> locationDetailsList;//库位
+	private List<StockIn> stockInList;//入库单
+	private StockOutEntries stockOutEntries;//出库单明细
+	private List<StockCheckEntries> stockCheckEntiesList;//盘点明细
+	private List<StockEntries> stockEntriesList;//变更记录
+	private List<CompanyUser> companyUserList; //修改人
 
 	public Integer getId() {
 		return id;

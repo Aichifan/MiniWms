@@ -16,6 +16,14 @@ public class StockEntries {
 	private Integer companyId;// 公司id
 	private Integer operatorId;// 操作人id
 
+	private StockInventory stockInventory;//库存
+	private StockItem stockItem;//商品
+	private StockIn stockIn;//入库单
+	private StockOut stockOut;//出库单
+	private StockCheck stockCheck;//盘点
+	private CompanyDetails companyDetails;//公司
+	private CompanyUser companyUser;//用户
+	
 	public Integer getId() {
 		return id;
 	}
