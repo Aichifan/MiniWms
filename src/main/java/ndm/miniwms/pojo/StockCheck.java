@@ -1,15 +1,48 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockCheck {
-	private Integer id;// 盘点id
-	private Date startAt;// 开始时间
-	private Date endAt;// 结束时间
-	private Integer companyId;// 公司id
-	private Integer operatorId;// 操作人id
-	private String description;// 说明
+	private Integer id;// 鐩樼偣id
+	private Date startAt;// 寮�濮嬫椂闂�
+	private Date endAt;// 缁撴潫鏃堕棿
+	private Integer companyId;// 鍏徃id
+	private Integer operatorId;// 鎿嶄綔浜篿d
+	private String description;// 璇存槑
 
+	private List<StockCheckEntries> stockCheckEntriesList;//盘点明细
+	private CompanyDetails companyDetails;//公司
+	private CompanyUser companyUser;//用户
+<<<<<<< HEAD
+
+	public List<StockCheckEntries> getStockCheckEntriesList() {
+		return stockCheckEntriesList;
+	}
+
+	public void setStockCheckEntriesList(List<StockCheckEntries> stockCheckEntriesList) {
+		this.stockCheckEntriesList = stockCheckEntriesList;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
+=======
+	
+>>>>>>> origin/cuiyuanhang
 	public Integer getId() {
 		return id;
 	}

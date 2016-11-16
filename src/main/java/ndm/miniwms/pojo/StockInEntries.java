@@ -13,6 +13,34 @@ public class StockInEntries {
 	private String UDF5; // 自定义参�?5
 	private String UDF6; // 自定义参�?6
 
+	private StockItem stockItem; //商品
+	private LocationDetails locationDetails; //库位
+	private StockIn stockIn; //入库单
+	
+	public StockItem getStockItem() {
+		return stockItem;
+	}
+
+	public void setStockItem(StockItem stockItem) {
+		this.stockItem = stockItem;
+	}
+
+	public LocationDetails getLocationDetails() {
+		return locationDetails;
+	}
+
+	public void setLocationDetails(LocationDetails locationDetails) {
+		this.locationDetails = locationDetails;
+	}
+
+	public StockIn getStockIn() {
+		return stockIn;
+	}
+
+	public void setStockIn(StockIn stockIn) {
+		this.stockIn = stockIn;
+	}
+
 	public Integer getId() {
 		return id;
 	}
