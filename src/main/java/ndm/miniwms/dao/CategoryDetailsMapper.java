@@ -1,5 +1,5 @@
 package ndm.miniwms.dao;
 
-public class CategoryDetailsMapper {
+public interface CategoryDetailsMapper {
 
 }
