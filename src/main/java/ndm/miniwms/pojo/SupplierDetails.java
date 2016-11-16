@@ -18,6 +18,8 @@ public class SupplierDetails {
 	private String contactMsn; // 联系人Skype
 	private String contactDesc; // 联系人描述
 	private Integer companyId; // 公司id
+	private CompanyDetails companyDetails;
+	private List<StockIn> stockInList;
 
 	private CompanyDetails companyDetails;//公司
 	private List<StockIn> stockInList; //入库单

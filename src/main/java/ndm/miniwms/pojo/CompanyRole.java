@@ -8,6 +8,7 @@ public class CompanyRole {
 	private Date modified; // 修改时间
 	private String name; // 名称
 	private Integer companyId; // 公司id
+	private CompanyDetails companyDetails;//公司对象
 
 	private CompanyDetails companyDetails;//公司对象
 
