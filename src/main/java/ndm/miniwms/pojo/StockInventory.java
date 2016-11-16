@@ -7,6 +7,7 @@ public class StockInventory {
 	private Integer id; // 库存id
 	private Date created; // 创建时间
 	private Date modified; // 修改时间
+	private boolean locked; //是否锁定
 	private Integer itemId; // 商品id
 	private Integer quantity; // 数量
 	private Integer lastOperatorId; // 最后修改人id
@@ -60,6 +61,14 @@ public class StockInventory {
 		this.stockOutEntries = stockOutEntries;
 	}
 
+	public boolean isLocked() {
+		return locked;
+	}
+	
+	public void setLocked(boolean locked) {
+		this.locked = locked;
+	}
+
 	public List<StockCheckEntries> getStockCheckEntiesList() {
 		return stockCheckEntiesList;
 	}
@@ -83,7 +92,6 @@ public class StockInventory {
 	public void setCompanyUserList(List<CompanyUser> companyUserList) {
 		this.companyUserList = companyUserList;
 	}
-
 
 	public Integer getId() {
 		return id;
