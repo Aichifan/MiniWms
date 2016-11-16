@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockIn {
 	private Integer id; // 入库单id
@@ -14,6 +15,52 @@ public class StockIn {
 	private String billnumber; // 订单编号
 	private String description; // 备注
 	private String customerBillnumber; // 客户订单编号
+
+	private SupplierDetails supplierDetails;//供应商
+	private StockInventory stockInventory;//库存
+	private	List<StockInEntries> stockInEntriesList;//入库单明细
+	private CompanyDetails companyDetails;//公司
+	private CompanyUser companyUser;//用户
+
+	public SupplierDetails getSupplierDetails() {
+		return supplierDetails;
+	}
+
+	public void setSupplierDetails(SupplierDetails supplierDetails) {
+		this.supplierDetails = supplierDetails;
+	}
+
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
+	public List<StockInEntries> getStockInEntriesList() {
+		return stockInEntriesList;
+	}
+
+	public void setStockInEntriesList(List<StockInEntries> stockInEntriesList) {
+		this.stockInEntriesList = stockInEntriesList;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
 
 	public Integer getId() {
 		return id;

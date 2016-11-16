@@ -5,7 +5,8 @@ public class StockItemPhoto {
 	private Integer itemId; // 商品id
 	private String path; // 路径
 	private String uploadDate; // 上传时间
-
+	private StockItem stockItem; 
+	
 	public Integer getId() {
 		return id;
 	}

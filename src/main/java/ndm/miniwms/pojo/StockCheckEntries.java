@@ -7,6 +7,25 @@ public class StockCheckEntries {
 	private Integer quantity;// 原数量
 	private Integer checkQuantity;// 盘点数量
 
+	private StockCheck stockCheck;//盘点
+	private StockInventory stockInventory;//库存
+
+	public StockCheck getStockCheck() {
+		return stockCheck;
+	}
+
+	public void setStockCheck(StockCheck stockCheck) {
+		this.stockCheck = stockCheck;
+	}
+
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
 	public Integer getId() {
 		return id;
 	}

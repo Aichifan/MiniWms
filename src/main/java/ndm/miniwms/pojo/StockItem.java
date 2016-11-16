@@ -1,9 +1,10 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockItem {
-	private Integer id; // 商品id
+	private Integer id; // 鍟嗗搧id
 	private String SKU; // SKU
 	private Date created; // 创建时间
 	private Date modified; // 修改时间
@@ -18,6 +19,61 @@ public class StockItem {
 	private Integer companyId; // 公司id
 	private Integer locationId; // 库位id
 	private String description; // 备注
+
+	private BrandDetails brandDetails;//品牌
+	private List<CategoryDetails> categoryDetailsList;//种类
+	private CompanyDetails companyDetails;//公司
+	private List<StockEntries> stockEntriesList;//库存变更记录
+	private List<StockInventory> stockInventoryList;//库存
+	private List<StockInEntries> stockInEntriesList;//入库明细
+	
+	public BrandDetails getBrandDetails() {
+		return brandDetails;
+	}
+
+	public void setBrandDetails(BrandDetails brandDetails) {
+		this.brandDetails = brandDetails;
+	}
+
+	public List<CategoryDetails> getCategoryDetailsList() {
+		return categoryDetailsList;
+	}
+
+	public void setCategoryDetailsList(List<CategoryDetails> categoryDetailsList) {
+		this.categoryDetailsList = categoryDetailsList;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<StockEntries> getStockEntriesList() {
+		return stockEntriesList;
+	}
+
+	public void setStockEntriesList(List<StockEntries> stockEntriesList) {
+		this.stockEntriesList = stockEntriesList;
+	}
+
+	public List<StockInventory> getStockInventoryList() {
+		return stockInventoryList;
+	}
+
+	public void setStockInventoryList(List<StockInventory> stockInventoryList) {
+		this.stockInventoryList = stockInventoryList;
+	}
+
+	public List<StockInEntries> getStockInEntriesList() {
+		return stockInEntriesList;
+	}
+
+	public void setStockInEntriesList(List<StockInEntries> stockInEntriesList) {
+		this.stockInEntriesList = stockInEntriesList;
+	}
 
 	public Integer getId() {
 		return id;

@@ -13,6 +13,34 @@ public class StockOutEntries {
 	private String UDF5;// 自定义参数5
 	private String UDF6;// 自定义参数6
 
+	private StockOut stockOut;//出库单
+	private StockItem stockItem;//商品
+	private StockInventory stockInventory;//库存
+
+	public StockOut getStockOut() {
+		return stockOut;
+	}
+
+	public void setStockOut(StockOut stockOut) {
+		this.stockOut = stockOut;
+	}
+
+	public StockItem getStockItem() {
+		return stockItem;
+	}
+
+	public void setStockItem(StockItem stockItem) {
+		this.stockItem = stockItem;
+	}
+
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
 	public Integer getId() {
 		return id;
 	}

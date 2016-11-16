@@ -21,6 +21,22 @@ public class SupplierDetails {
 	private CompanyDetails companyDetails;
 	private List<StockIn> stockInList;
 
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<StockIn> getStockInList() {
+		return stockInList;
+	}
+
+	public void setStockInList(List<StockIn> stockInList) {
+		this.stockInList = stockInList;
+	}
+
 	public Integer getId() {
 		return id;
 	}
