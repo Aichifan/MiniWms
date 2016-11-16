@@ -17,14 +17,21 @@
 	</delete>
 
 	<update id="update" parameterType="ndm.miniwms.pojo.LocationDetails">
-
+		update location_details
+		set created=#{created}, modified=#{modified},name=#{name},usage=#{usage},
+		XCoord=#{XCoord},YCoord=#{YCoord},ZCoord=#{ZCoord},warehouse_id=#{warehouseId},
+		company_id=#{companyId}
+		where id = #{id,jdbcType=INTEGER}
 	</update>
 
 	<insert id="add" parameterType="ndm.miniwms.pojo.LocationDetails">
-		insert into location_details (created, modified, name, usage, XCoord,
+		insert into location_details
+		(created, modified, name, usage, XCoord,
 		YCoord,
-		ZCoord, warehouse_id, company_id) values (#{created}, #{modified}, #{name},
-		#{usage}, #{XCoord}, #{YCoord}, #{ZCoord},
+		ZCoord, warehouse_id,
+		company_id) values (#{created}, #{modified}, #{name},
+		#{usage},
+		#{XCoord}, #{YCoord}, #{ZCoord},
 		#{warehouseId},#{companyId})
 	</insert>
 </mapper>
