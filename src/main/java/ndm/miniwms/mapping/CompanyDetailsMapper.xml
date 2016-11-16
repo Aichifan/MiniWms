@@ -24,7 +24,15 @@
 	</delete>
 
 	<update id="update" parameterType="ndm.miniwms.pojo.CompanyDetails">
-
+		update company_details
+		set
+		created=#{created},modified=#{modified}, name=#{name},
+		anothername=#{anothername},
+		address=#{address}, email=#{email},
+		description=#{description},issystem=#{issystem},contact_name=#{contactName},
+		contact_tel=#{contactTel},contact_fax=#{contactFax},contact_email=#{contactEmail},contact_qq=#{contactQq},
+		contact_msn=#{contactMsn},contact_desc=#{contactDesc},sku_prev=#{skuPrev}
+		where id = #{id,jdbcType=INTEGER}
 	</update>
 
 	<insert id="add" parameterType="ndm.miniwms.pojo.CompanyDetails">
@@ -33,14 +41,13 @@
 		email, description,
 		issystem, contact_name, contact_tel, contact_fax,
 		contact_email,
-		contact_qq, contact_msn, contact_desc, sku_prev) values (#{id},
-		#{created},
+		contact_qq, contact_msn, contact_desc, sku_prev) values (#{created},
 		#{modified},
 		#{name}, #{anothername}, #{address}, #{email},
 		#{description}, #{issystem},
 		#{contactName},
 		#{contactTel},
-		#{contactFax}, #{contactQq}, #{contactMsn}, #{contactDesc},
+		#{contactFax}, #{contactEmail},#{contactQq}, #{contactMsn}, #{contactDesc},
 		#{skuPrev}
 		)
 	</insert>
