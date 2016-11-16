@@ -16,6 +16,70 @@ public class StockEntries {
 	private Integer companyId;// 公司id
 	private Integer operatorId;// 操作人id
 
+	private StockInventory stockInventory;//库存
+	private StockItem stockItem;//商品
+	private StockIn stockIn;//入库单
+	private StockOut stockOut;//出库单
+	private StockCheck stockCheck;//盘点
+	private CompanyDetails companyDetails;//公司
+	private CompanyUser companyUser;//用户
+	
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
+	public StockItem getStockItem() {
+		return stockItem;
+	}
+
+	public void setStockItem(StockItem stockItem) {
+		this.stockItem = stockItem;
+	}
+
+	public StockIn getStockIn() {
+		return stockIn;
+	}
+
+	public void setStockIn(StockIn stockIn) {
+		this.stockIn = stockIn;
+	}
+
+	public StockOut getStockOut() {
+		return stockOut;
+	}
+
+	public void setStockOut(StockOut stockOut) {
+		this.stockOut = stockOut;
+	}
+
+	public StockCheck getStockCheck() {
+		return stockCheck;
+	}
+
+	public void setStockCheck(StockCheck stockCheck) {
+		this.stockCheck = stockCheck;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
 	public Integer getId() {
 		return id;
 	}

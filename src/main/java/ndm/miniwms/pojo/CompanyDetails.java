@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class CompanyDetails {
 	private Integer id; // 公司id
@@ -20,6 +21,124 @@ public class CompanyDetails {
 	private String contactMsn; // 联系人Skype
 	private String contactDesc; // 联系人描述
 	private String skuPrev; // SKU前缀
+
+	private List<LocationDetails> locationDetailsList; // 公司库位
+	private List<CompanyUser> companyUserList; // 公司用户
+	private List<CompanyRole> companyRoleList; // 公司角色
+	private List<BrandDetails> brandDetailsList; // 公司品牌
+	private List<SupplierDetails> supplierDetailsList; //公司供应商
+	private List<ConsigneeDetails> consigneeDetailsList; //公司收货人
+	private List<StockItem> stockItemList; //公司商品
+	private List<StockIn> stockInList; //公司入库单
+	private List<StockOut> stockOutList; //公司出库单
+	private List<CustomizeReport>  customizeReportList; //公司自定义报表
+	private List<StockEntries> stockEntriesList; //公司库存变更
+	private List<StockCheck> stockCheckList; //公司盘点
+	private List<StockInventory> stockInventoryList; //库存
+	
+	public List<LocationDetails> getLocationDetailsList() {
+		return locationDetailsList;
+	}
+
+	public void setLocationDetailsList(List<LocationDetails> locationDetailsList) {
+		this.locationDetailsList = locationDetailsList;
+	}
+
+	public List<CompanyUser> getCompanyUserList() {
+		return companyUserList;
+	}
+
+	public void setCompanyUserList(List<CompanyUser> companyUserList) {
+		this.companyUserList = companyUserList;
+	}
+
+	public List<CompanyRole> getCompanyRoleList() {
+		return companyRoleList;
+	}
+
+	public void setCompanyRoleList(List<CompanyRole> companyRoleList) {
+		this.companyRoleList = companyRoleList;
+	}
+
+	public List<BrandDetails> getBrandDetailsList() {
+		return brandDetailsList;
+	}
+
+	public void setBrandDetailsList(List<BrandDetails> brandDetailsList) {
+		this.brandDetailsList = brandDetailsList;
+	}
+
+	public List<SupplierDetails> getSupplierDetailsList() {
+		return supplierDetailsList;
+	}
+
+	public void setSupplierDetailsList(List<SupplierDetails> supplierDetailsList) {
+		this.supplierDetailsList = supplierDetailsList;
+	}
+
+	public List<ConsigneeDetails> getConsigneeDetailsList() {
+		return consigneeDetailsList;
+	}
+
+	public void setConsigneeDetailsList(List<ConsigneeDetails> consigneeDetailsList) {
+		this.consigneeDetailsList = consigneeDetailsList;
+	}
+
+	public List<StockItem> getStockItemList() {
+		return stockItemList;
+	}
+
+	public void setStockItemList(List<StockItem> stockItemList) {
+		this.stockItemList = stockItemList;
+	}
+
+	public List<StockIn> getStockInList() {
+		return stockInList;
+	}
+
+	public void setStockInList(List<StockIn> stockInList) {
+		this.stockInList = stockInList;
+	}
+
+	public List<StockOut> getStockOutList() {
+		return stockOutList;
+	}
+
+	public void setStockOutList(List<StockOut> stockOutList) {
+		this.stockOutList = stockOutList;
+	}
+
+	public List<CustomizeReport> getCustomizeReportList() {
+		return customizeReportList;
+	}
+
+	public void setCustomizeReportList(List<CustomizeReport> customizeReportList) {
+		this.customizeReportList = customizeReportList;
+	}
+
+	public List<StockEntries> getStockEntriesList() {
+		return stockEntriesList;
+	}
+
+	public void setStockEntriesList(List<StockEntries> stockEntriesList) {
+		this.stockEntriesList = stockEntriesList;
+	}
+
+	public List<StockCheck> getStockCheckList() {
+		return stockCheckList;
+	}
+
+	public void setStockCheckList(List<StockCheck> stockCheckList) {
+		this.stockCheckList = stockCheckList;
+	}
+
+	public List<StockInventory> getStockInventoryList() {
+		return stockInventoryList;
+	}
+
+	public void setStockInventoryList(List<StockInventory> stockInventoryList) {
+		this.stockInventoryList = stockInventoryList;
+	}
 
 	public Integer getId() {
 		return id;

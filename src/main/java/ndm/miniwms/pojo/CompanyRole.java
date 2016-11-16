@@ -9,6 +9,17 @@ public class CompanyRole {
 	private String name; // 名称
 	private Integer companyId; // 公司id
 
+	private CompanyDetails companyDetails;//公司对象
+
+	
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
 	public Integer getId() {
 		return id;
 	}

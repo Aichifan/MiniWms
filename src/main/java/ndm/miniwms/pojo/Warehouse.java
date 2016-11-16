@@ -1,6 +1,7 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Warehouse {
 	private Integer id; // 仓库id
@@ -16,6 +17,25 @@ public class Warehouse {
 	private String contactQq; // 联系人QQ
 	private String contactMsn; // 联系人Skype
 	private String contactDesc; // 联系人描述
+	
+	private CompanyDetails companyDetails;//公司
+	private List<LocationDetails> locationDetailsList; //创库库位
+	
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public List<LocationDetails> getLocationDetailsList() {
+		return locationDetailsList;
+	}
+
+	public void setLocationDetailsList(List<LocationDetails> locationDetailsList) {
+		this.locationDetailsList = locationDetailsList;
+	}
 
 	public Integer getId() {
 		return id;
