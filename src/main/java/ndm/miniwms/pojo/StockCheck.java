@@ -14,7 +14,35 @@ public class StockCheck {
 	private List<StockCheckEntries> stockCheckEntriesList;//盘点明细
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户
+<<<<<<< HEAD
+
+	public List<StockCheckEntries> getStockCheckEntriesList() {
+		return stockCheckEntriesList;
+	}
+
+	public void setStockCheckEntriesList(List<StockCheckEntries> stockCheckEntriesList) {
+		this.stockCheckEntriesList = stockCheckEntriesList;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
+=======
 	
+>>>>>>> origin/cuiyuanhang
 	public Integer getId() {
 		return id;
 	}

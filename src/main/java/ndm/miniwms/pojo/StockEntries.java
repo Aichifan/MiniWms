@@ -3,6 +3,20 @@ package ndm.miniwms.pojo;
 import java.util.Date;
 
 public class StockEntries {
+<<<<<<< HEAD
+	private Integer id;// 记录id
+	private Integer inventoryId;// 库存id
+	private Integer itemId;// 商品id
+	private Date date;// 日期
+	private String type;// 类型
+	private Integer inId;// 入库单id
+	private Integer outId;// 出库单id
+	private Integer checkId;// 盘点id
+	private Integer openingStock;// 变更前数量
+	private Integer closingStock;// 变更后数量
+	private Integer companyId;// 公司id
+	private Integer operatorId;// 操作人id
+=======
 	private Integer id;// 璁板綍id
 	private Integer inventoryId;// 搴撳瓨id
 	private Integer itemId;// 鍟嗗搧id
@@ -15,6 +29,7 @@ public class StockEntries {
 	private Integer closingStock;// 鍙樻洿鍚庢暟閲�
 	private Integer companyId;// 鍏徃id
 	private Integer operatorId;// 鎿嶄綔浜篿d
+>>>>>>> origin/cuiyuanhang
 
 	private StockInventory stockInventory;//库存
 	private StockItem stockItem;//商品
@@ -23,6 +38,66 @@ public class StockEntries {
 	private StockCheck stockCheck;//盘点
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户
+<<<<<<< HEAD
+	
+	public StockInventory getStockInventory() {
+		return stockInventory;
+	}
+
+	public void setStockInventory(StockInventory stockInventory) {
+		this.stockInventory = stockInventory;
+	}
+
+	public StockItem getStockItem() {
+		return stockItem;
+	}
+
+	public void setStockItem(StockItem stockItem) {
+		this.stockItem = stockItem;
+	}
+
+	public StockIn getStockIn() {
+		return stockIn;
+	}
+
+	public void setStockIn(StockIn stockIn) {
+		this.stockIn = stockIn;
+	}
+
+	public StockOut getStockOut() {
+		return stockOut;
+	}
+
+	public void setStockOut(StockOut stockOut) {
+		this.stockOut = stockOut;
+	}
+
+	public StockCheck getStockCheck() {
+		return stockCheck;
+	}
+
+	public void setStockCheck(StockCheck stockCheck) {
+		this.stockCheck = stockCheck;
+	}
+
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
+
+	public CompanyUser getCompanyUser() {
+		return companyUser;
+	}
+
+	public void setCompanyUser(CompanyUser companyUser) {
+		this.companyUser = companyUser;
+	}
+
+=======
+>>>>>>> origin/cuiyuanhang
 	public Integer getId() {
 		return id;
 	}
