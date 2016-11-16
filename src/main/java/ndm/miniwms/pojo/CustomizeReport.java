@@ -13,7 +13,6 @@ public class CustomizeReport {
 	private Integer usageCount;// 浣跨敤娆℃暟
 	private Integer companyId;// 浣跨敤鍏徃id
 
-<<<<<<< HEAD
 	private CompanyUser companyUser;//鐢ㄦ埛
 	private CompanyDetails companyDetails;//鍏徃
 	
@@ -33,10 +32,6 @@ public class CustomizeReport {
 		this.companyDetails = companyDetails;
 	}
 
-=======
-	private CompanyUser companyUser;//用户
-	private CompanyDetails companyDetails;//公司
->>>>>>> origin/cuiyuanhang
 	public Integer getId() {
 		return id;
 	}

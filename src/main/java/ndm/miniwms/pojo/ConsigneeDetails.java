@@ -29,17 +29,6 @@ public class ConsigneeDetails {
 		this.companyDetails = companyDetails;
 	}
 
-	private CompanyDetails companyDetails; //公司
-	private List<StockOut> stockOutList; //出货单
-	
-	public CompanyDetails getCompanyDetails() {
-		return companyDetails;
-	}
-
-	public void setCompanyDetails(CompanyDetails companyDetails) {
-		this.companyDetails = companyDetails;
-	}
-
 	public List<StockOut> getStockOutList() {
 		return stockOutList;
 	}
