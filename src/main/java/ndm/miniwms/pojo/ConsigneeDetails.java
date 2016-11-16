@@ -1,22 +1,33 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class ConsigneeDetails {
-	private Integer id; // 收货人id
-	private Date created; // 创建时间
-	private Date modified; // 修改时间
-	private String name; // 名称
-	private String address; // 地址
-	private String description; // 描述
-	private String contactName; // 联系人名称
-	private String contactTel; // 联系人号码
-	private String contactFax; // 联系人传真
-	private String contactEmail; // 联系人邮箱
-	private String contactQq; // 联系人QQ
-	private String contactMsn; // 联系人Skype
-	private String contactDesc; // 联系人描述
-	private String companyId; // 公司id
+	private Integer id; // 鏀惰揣浜篿d
+	private Date created; // 鍒涘缓鏃堕棿
+	private Date modified; // 淇敼鏃堕棿
+	private String name; // 鍚嶇О
+	private String address; // 鍦板潃
+	private String description; // 鎻忚堪
+	private String contactName; // 鑱旂郴浜哄悕绉�
+	private String contactTel; // 鑱旂郴浜哄彿鐮�
+	private String contactFax; // 鑱旂郴浜轰紶鐪�
+	private String contactEmail; // 鑱旂郴浜洪偖绠�
+	private String contactQq; // 鑱旂郴浜篞Q
+	private String contactMsn; // 鑱旂郴浜篠kype
+	private String contactDesc; // 鑱旂郴浜烘弿杩�
+	private String companyId; // 鍏徃id
+	private CompanyDetails companyDetails; //公司
+	private List<StockOut> stockOutList;//出库单
+	
+	public CompanyDetails getCompanyDetails() {
+		return companyDetails;
+	}
+
+	public void setCompanyDetails(CompanyDetails companyDetails) {
+		this.companyDetails = companyDetails;
+	}
 
 	public Integer getId() {
 		return id;

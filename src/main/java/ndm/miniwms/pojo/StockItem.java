@@ -1,24 +1,31 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockItem {
-	private Integer id; // 商品id
+	private Integer id; // 鍟嗗搧id
 	private String SKU; // SKU
-	private Date created; // 创建时间
-	private Date modified; // 修改时间
-	private String name; // 名称
-	private String barcode; // 条形码
-	private String weight; // 重量
-	private String volume; // 体制
-	private Integer brandId; // 品牌id
-	private Integer categoryId; // 种类id
-	private String UOM; // 计量单位
-	private Integer hazardFlag; // 是否危险品
-	private Integer companyId; // 公司id
-	private Integer locationId; // 库位id
-	private String description; // 备注
-
+	private Date created; // 鍒涘缓鏃堕棿
+	private Date modified; // 淇敼鏃堕棿
+	private String name; // 鍚嶇О
+	private String barcode; // 鏉″舰鐮�
+	private String weight; // 閲嶉噺
+	private String volume; // 浣撳埗
+	private Integer brandId; // 鍝佺墝id
+	private Integer categoryId; // 绉嶇被id
+	private String UOM; // 璁￠噺鍗曚綅
+	private Integer hazardFlag; // 鏄惁鍗遍櫓鍝�
+	private Integer companyId; // 鍏徃id
+	private Integer locationId; // 搴撲綅id
+	private String description; // 澶囨敞
+	private BrandDetails brandDetails;//品牌
+	private List<CategoryDetails> categoryDetailsList;//种类
+	private CompanyDetails companyDetails;//公司
+	private List<StockEntries> stockEntriesList;//库存变更记录
+	private List<StockInventory> stockInventoryList;//库存
+	private List<StockInEntries> stockInEntriesList;//入库明细
+	
 	public Integer getId() {
 		return id;
 	}

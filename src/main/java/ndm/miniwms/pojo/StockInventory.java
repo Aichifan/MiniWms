@@ -1,24 +1,32 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class StockInventory {
-	private Integer id; // 库存id
-	private Date created; // 创建时间
-	private Date modified; // 修改时间
-	private Integer itemId; // 商品id
-	private Integer quantity; // 数量
-	private Integer lastOperatorId; // 最后修改人id
-	private Integer companyId; // 公司id
-	private Integer locationId; // 库位id
-	private Integer inId; // 入库单id
-	private String UDF1; // 自定义参数1
-	private String UDF2; // 自定义参数2
-	private String UDF3; // 自定义参数3
-	private String UDF4; // 自定义参数4
-	private String UDF5; // 自定义参数5
-	private String UDF6; // 自定义参数6
-
+	private Integer id; // 搴撳瓨id
+	private Date created; // 鍒涘缓鏃堕棿
+	private Date modified; // 淇敼鏃堕棿
+	private Integer itemId; // 鍟嗗搧id
+	private Integer quantity; // 鏁伴噺
+	private Integer lastOperatorId; // 鏈�鍚庝慨鏀逛汉id
+	private Integer companyId; // 鍏徃id
+	private Integer locationId; // 搴撲綅id
+	private Integer inId; // 鍏ュ簱鍗昳d
+	private String UDF1; // 鑷畾涔夊弬鏁�1
+	private String UDF2; // 鑷畾涔夊弬鏁�2
+	private String UDF3; // 鑷畾涔夊弬鏁�3
+	private String UDF4; // 鑷畾涔夊弬鏁�4
+	private String UDF5; // 鑷畾涔夊弬鏁�5
+	private String UDF6; // 鑷畾涔夊弬鏁�6
+	private CompanyDetails companyDetails;//公司
+	private List<LocationDetails> locationDetailsList;//库位
+	private List<StockIn> stockInList;//入库单
+	private StockOutEntries stockOutEntries;//出库单明细
+	private List<StockCheckEntries> stockCheckEntiesList;//盘点明细
+	private List<StockEntries> stockEntriesList;//变更记录
+	private List<CompanyUser> companyUserList; //修改人
+	
 	public Integer getId() {
 		return id;
 	}
