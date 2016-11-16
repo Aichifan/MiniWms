@@ -14,19 +14,13 @@ public class StockOut {
 	private Integer userId; // 鍒涘缓浜篿d
 	private String billnumber; // 璁㈠崟缂栧彿
 	private String description; // description
-<<<<<<< HEAD
 	private String customerBillnumber; // 客户订单编号
 
-=======
-	private String customerBillnumber; // 瀹㈡埛璁㈠崟缂栧彿
-	
->>>>>>> origin/cuiyuanhang
 	private List<StockEntries> stockEntriesList;//库存变更记录
 	private List<StockOutEntries> stockOutEntriesList;//出库单条目
 	private ConsigneeDetails consigneeDetails;//收货人
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户/创建人
-<<<<<<< HEAD
 
 	public List<StockEntries> getStockEntriesList() {
 		return stockEntriesList;
@@ -68,8 +62,6 @@ public class StockOut {
 		this.companyUser = companyUser;
 	}
 
-=======
->>>>>>> origin/cuiyuanhang
 	public Integer getId() {
 		return id;
 	}

@@ -14,7 +14,6 @@ public class StockCheck {
 	private List<StockCheckEntries> stockCheckEntriesList;//盘点明细
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户
-<<<<<<< HEAD
 
 	public List<StockCheckEntries> getStockCheckEntriesList() {
 		return stockCheckEntriesList;
@@ -40,9 +39,6 @@ public class StockCheck {
 		this.companyUser = companyUser;
 	}
 
-=======
-	
->>>>>>> origin/cuiyuanhang
 	public Integer getId() {
 		return id;
 	}
