@@ -1,18 +1,22 @@
 package ndm.miniwms.pojo;
 
 public class StockOutEntries {
-	private Integer id;// 出库单明细id
-	private Integer outId;// 出库单id
-	private Integer itemId;// 商品id
-	private Integer quantity;// 数量
-	private Integer inventoryId;// 库存id
-	private String UDF1;// 自定义参数1
-	private String UDF2;// 自定义参数2
-	private String UDF3;// 自定义参数3
-	private String UDF4;// 自定义参数4
-	private String UDF5;// 自定义参数5
-	private String UDF6;// 自定义参数6
+	private Integer id;// 鍑哄簱鍗曟槑缁唅d
+	private Integer outId;// 鍑哄簱鍗昳d
+	private Integer itemId;// 鍟嗗搧id
+	private Integer quantity;// 鏁伴噺
+	private Integer inventoryId;// 搴撳瓨id
+	private String UDF1;// 鑷畾涔夊弬鏁�1
+	private String UDF2;// 鑷畾涔夊弬鏁�2
+	private String UDF3;// 鑷畾涔夊弬鏁�3
+	private String UDF4;// 鑷畾涔夊弬鏁�4
+	private String UDF5;// 鑷畾涔夊弬鏁�5
+	private String UDF6;// 鑷畾涔夊弬鏁�6
 
+	private StockOut stockOut;//出库单
+	private StockItem stockItem;//商品
+	private StockInventory stockInventory;//库存
+	
 	public Integer getId() {
 		return id;
 	}

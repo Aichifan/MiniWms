@@ -1,12 +1,14 @@
 package ndm.miniwms.pojo;
 
 public class StockCheckEntries {
-	private Integer id;// 明细id
-	private Integer checkId;// 盘点id
-	private Integer inventoryId;// 库存id
-	private Integer quantity;// 原数量
-	private Integer checkQuantity;// 盘点数量
+	private Integer id;// 鏄庣粏id
+	private Integer checkId;// 鐩樼偣id
+	private Integer inventoryId;// 搴撳瓨id
+	private Integer quantity;// 鍘熸暟閲�
+	private Integer checkQuantity;// 鐩樼偣鏁伴噺
 
+	private StockCheck stockCheck;//盘点
+	private StockInventory stockInventory;//库存
 	public Integer getId() {
 		return id;
 	}

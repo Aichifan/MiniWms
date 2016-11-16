@@ -13,6 +13,8 @@ public class CustomizeReport {
 	private Integer usageCount;// 浣跨敤娆℃暟
 	private Integer companyId;// 浣跨敤鍏徃id
 
+	private CompanyUser companyUser;//用户
+	private CompanyDetails companyDetails;//公司
 	public Integer getId() {
 		return id;
 	}
