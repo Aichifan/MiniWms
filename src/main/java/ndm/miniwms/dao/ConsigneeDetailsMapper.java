@@ -1,5 +1,15 @@
 package ndm.miniwms.dao;
 
-public interface ConsigneeDetailsMapper {
+import java.util.List;
 
+import ndm.miniwms.pojo.ConsigneeDetails;
+
+public interface ConsigneeDetailsMapper {
+	List<ConsigneeDetails> all();
+
+	int delById(Integer id);
+
+	int update(ConsigneeDetails consigneeDetails);
+
+	int add(ConsigneeDetails consigneeDetails);
 }

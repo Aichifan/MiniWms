@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="ndm.miniwms.dao.StockItemMapper" >
+  <resultMap id="BaseResultMap" type="ndm.miniwms.pojo.StockItem" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="SKU" property="SKU" jdbcType="VARCHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="modified" property="modified" jdbcType="TIMESTAMP" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="barcode" property="barcode" jdbcType="VARCHAR" />
+    <result column="weight" property="weight" jdbcType="VARCHAR" />
+    <result column="volume" property="volume" jdbcType="VARCHAR" />
+    <result column="brand_id" property="brandId" jdbcType="INTEGER" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="UOM" property="UOM" jdbcType="VARCHAR" />
+    <result column="hazard_flag" property="hazardFlag" jdbcType="BOOLEAN" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <select id="all" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  select * from stock_item 
+  </select>
+  
+  <delete id="delById" parameterType="java.lang.Integer">
+  delete from stock_item  where id = #{id}
+  </delete>
+  
+  <insert id="add" parameterType="ndm.miniwms.pojo.StockItem">
+  insert into stock_item (SKU,created,modified,name,barcode,weight,volume,brand_id,category_id,UOM,hazard_flag,description,company_id)
+  values(#{SKU},#{created},#{modified},#{name},#{barcode},#{weight},#{volume},#{brandId},#{categoryId},#{UOM},#{hazardFlag},#{description},#{companyId})
+  </insert>
+  
+  <update id="update" parameterType="ndm.miniwms.pojo.StockItem">
+  update stock_item 
+  set SKU=#{SKU},created=#{created},modified=#{modified},name=#{name},
+  barcode=#{barcode},
+  weight=#{weight},
+  volume=#{volume},
+  brand_id=#{brandId},
+  category_id=#{categoryId},
+  UOM=#{UOM},
+  hazard_flag=#{hazardFlag},
+  description=#{description},
+  company_id=#{companyId}
+  where id = #{id}
+  </update>
 </mapper>

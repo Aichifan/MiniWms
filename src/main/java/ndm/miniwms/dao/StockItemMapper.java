@@ -1,5 +1,15 @@
 package ndm.miniwms.dao;
 
-public interface StockItemMapper {
+import java.util.List;
 
+import ndm.miniwms.pojo.StockItem;
+
+public interface StockItemMapper {
+	List<StockItem> all();
+
+	int delById(Integer id);
+
+	int update(StockItem stockItem);
+
+	int add(StockItem stockItem);
 }
