@@ -5,6 +5,7 @@ import java.util.List;
 
 public class StockInventory {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private Integer id; // 库存id
 	private Date created; // 创建时间
 	private Date modified; // 修改时间
@@ -86,6 +87,8 @@ public class StockInventory {
 	}
 
 =======
+=======
+>>>>>>> origin/zhaoxingyu
 	private Integer id; // 搴撳瓨id
 	private Date created; // 鍒涘缓鏃堕棿
 	private Date modified; // 淇敼鏃堕棿
@@ -101,11 +104,22 @@ public class StockInventory {
 	private String UDF4; // 鑷畾涔夊弬鏁�4
 	private String UDF5; // 鑷畾涔夊弬鏁�5
 	private String UDF6; // 鑷畾涔夊弬鏁�6
+<<<<<<< HEAD
 
 	private StockIn stockIn;//入库单
 	private StockItem stockItem;//商品
 	private LocationDetails locationDetails;//库位
 >>>>>>> origin/cuiyuanhang
+=======
+	private CompanyDetails companyDetails;//公司
+	private List<LocationDetails> locationDetailsList;//库位
+	private List<StockIn> stockInList;//入库单
+	private StockOutEntries stockOutEntries;//出库单明细
+	private List<StockCheckEntries> stockCheckEntiesList;//盘点明细
+	private List<StockEntries> stockEntriesList;//变更记录
+	private List<CompanyUser> companyUserList; //修改人
+	
+>>>>>>> origin/zhaoxingyu
 	public Integer getId() {
 		return id;
 	}
