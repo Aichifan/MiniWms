@@ -11,6 +11,11 @@
     select * from stock_item_photo
   </select>
   
+  <!-- 圖片顯示-->
+  <select id="selectById" resultMap="BaseResultMap" >
+    select * from stock_item_photo where id = #{id}
+  </select>
+  
   <delete id="delById" parameterType="java.lang.Integer" >
     delete from stock_item_photo where id = #{id}
   </delete>
