@@ -2,7 +2,6 @@ package ndm.miniwms.dao;
 
 import java.util.List;
 
-import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.Warehouse;
 
 public interface WarehouseMapper {
@@ -13,4 +12,8 @@ public interface WarehouseMapper {
 	int update(Warehouse warehouse);
 
 	int add(Warehouse warehouse);
+
+	Warehouse selectById(Integer id);
+
+	List<Warehouse> selectTab();
 }

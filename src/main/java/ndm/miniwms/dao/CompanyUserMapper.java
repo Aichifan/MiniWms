@@ -2,7 +2,6 @@ package ndm.miniwms.dao;
 
 import java.util.List;
 
-import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.CompanyUser;
 
 public interface CompanyUserMapper {
@@ -13,4 +12,8 @@ public interface CompanyUserMapper {
 	int update(CompanyUser companyUser);
 
 	int add(CompanyUser companyUser);
+	
+	CompanyUser selectById(Integer id);
+	
+	List<CompanyUser> selectTab();
 }
