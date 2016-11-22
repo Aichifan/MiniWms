@@ -4,7 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import ndm.miniwms.dao.Login;
+import ndm.miniwms.dao.LoginMapper;
 import ndm.miniwms.pojo.CompanyUser;
 import ndm.miniwms.service.ILoginService;
 
@@ -12,7 +12,7 @@ import ndm.miniwms.service.ILoginService;
 public class LoginServiceImpl implements ILoginService {
 
 	@Resource
-	private Login dao;
+	private LoginMapper dao;
 
 	@Override
 	public CompanyUser select(CompanyUser companyUser) {
