@@ -12,4 +12,8 @@ public interface StockItemMapper {
 	int update(StockItem stockItem);
 
 	int add(StockItem stockItem);
+	
+	StockItem selectById(Integer id);
+	
+	List<StockItem> selectStockItem();
 }

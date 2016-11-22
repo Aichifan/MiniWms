@@ -21,6 +21,10 @@
   select * from supplier_details
   </select>
   
+  <select id = "selectTab"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
+	select * from location_details where 1 = 1
+  </select>
+  
   <delete id="delById" parameterType="java.lang.Integer">
   delete from supplier_details where id = #{id}
   </delete>
@@ -41,7 +45,7 @@
   contact_qq=#{contactQq},
   contact_msn=#{contactMsn},
   company_id=#{companyId},
-  contact_desc=#{contactDesc},
+  contact_desc=#{contactDesc}
   where id = #{id}
   </update>
 </mapper>

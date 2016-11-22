@@ -12,4 +12,8 @@ public interface BrandDetailsMapper {
 	int update(BrandDetails branddetails);
 
 	int add(BrandDetails branddetails);
+	
+	BrandDetails selectById(Integer id);
+
+	List<BrandDetails> selectTab();
 }

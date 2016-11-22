@@ -12,4 +12,8 @@ public interface SupplierDetailsMapper {
 	int update(SupplierDetails supplierDetails);
 
 	int add(SupplierDetails supplierDetails);
+
+	SupplierDetails selectById(Integer id);
+
+	List<SupplierDetails> selectTab();
 }
