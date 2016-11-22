@@ -3,7 +3,6 @@ package ndm.miniwms.dao;
 import java.util.List;
 
 import ndm.miniwms.pojo.CategoryDetails;
-import ndm.miniwms.pojo.CompanyDetails;
 
 public interface CategoryDetailsMapper {
 	List<CategoryDetails> all();
@@ -13,4 +12,8 @@ public interface CategoryDetailsMapper {
 	int update(CategoryDetails categoryDetails);
 
 	int add(CategoryDetails categoryDetails);
+
+	CategoryDetails selectById(Integer id);
+
+	List<CategoryDetails> selectTab();
 }

@@ -8,7 +8,11 @@
 	<select id="all" resultMap="BaseResultMap">
 		select * from category_details
 	</select>
-
+	
+	<select id = "selectTab"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
+	select * from category_details where 1 = 1
+    </select>
+	
 	<delete id="delById" parameterType="java.lang.Integer">
 		delete from category_details
 		where id = #{id,jdbcType=INTEGER}

@@ -13,7 +13,6 @@ public class BrandDetails {
 	private CompanyDetails companyDetails; //公司
 	private List<StockItem> stockItemList; //商品
 
-	
 	public CompanyDetails getCompanyDetails() {
 		return companyDetails;
 	}
