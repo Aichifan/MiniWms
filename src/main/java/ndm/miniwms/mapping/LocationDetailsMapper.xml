@@ -10,7 +10,11 @@
 	<select id="all" resultMap="BaseResultMap">
 		select * from location_details
 	</select>
-
+	
+	<select id = "selectTab"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
+	select * from location_details 
+    </select>
+	
 	<delete id="delById" parameterType="java.lang.Integer">
 		delete from location_details
 		where id = #{id,jdbcType=INTEGER}
@@ -18,7 +22,7 @@
 
 	<update id="update" parameterType="ndm.miniwms.pojo.LocationDetails">
 		update location_details
-		set created=#{created}, modified=#{modified},name=#{name},usage=#{usage},
+		set created=#{created}, modified=#{modified},name=#{name},`usage`=#{usage},
 		XCoord=#{XCoord},YCoord=#{YCoord},ZCoord=#{ZCoord},warehouse_id=#{warehouseId},
 		company_id=#{companyId}
 		where id = #{id,jdbcType=INTEGER}
@@ -26,7 +30,7 @@
 
 	<insert id="add" parameterType="ndm.miniwms.pojo.LocationDetails">
 		insert into location_details
-		(created, modified, name, usage, XCoord,
+		(created, modified, name, `usage`, XCoord,
 		YCoord,
 		ZCoord, warehouse_id,
 		company_id) values (#{created}, #{modified}, #{name},
