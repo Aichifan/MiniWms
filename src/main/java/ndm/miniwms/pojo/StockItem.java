@@ -3,6 +3,8 @@ package ndm.miniwms.pojo;
 import java.util.Date;
 import java.util.List;
 
+import ndm.miniwms.vo.StockItemVo;
+
 public class StockItem {
 	private Integer id; // 鍟嗗搧id
 	private String SKU; // SKU
@@ -26,7 +28,19 @@ public class StockItem {
 	private List<StockEntries> stockEntriesList;//库存变更记录
 	private List<StockInventory> stockInventoryList;//库存
 	private List<StockInEntries> stockInEntriesList;//入库明细
+	private List<StockItemPhoto> StockItemPhotoList; //圖片
 	
+	public StockItem(){}
+	
+	public StockItem(StockItemVo stockItemVo){
+		this.id=stockItemVo.getId();
+		this.SKU=stockItemVo.getSKU();
+		this.name=stockItemVo.getName();
+		this.barcode=stockItemVo.getBarcode();
+		this.weight=stockItemVo.getWeight();
+		this.volume=stockItemVo.getVolume();
+		this.UOM=stockItemVo.getUOM();
+	}
 	public BrandDetails getBrandDetails() {
 		return brandDetails;
 	}
@@ -73,6 +87,14 @@ public class StockItem {
 
 	public void setStockInEntriesList(List<StockInEntries> stockInEntriesList) {
 		this.stockInEntriesList = stockInEntriesList;
+	}
+
+	public List<StockItemPhoto> getStockItemPhotoList() {
+		return StockItemPhotoList;
+	}
+
+	public void setStockItemPhotoList(List<StockItemPhoto> stockItemPhotoList) {
+		StockItemPhotoList = stockItemPhotoList;
 	}
 
 	public Integer getId() {
