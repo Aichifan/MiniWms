@@ -26,7 +26,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/login",method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<Message> login(@RequestBody CompanyUser companyUser, HttpSession session) {
+	public ResponseEntity<Message> login(CompanyUser companyUser, HttpSession session) {
 		CompanyUser user = loginService.select(companyUser);
 		if (user == null) {
 //			response.setStatus(401);
