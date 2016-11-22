@@ -12,4 +12,8 @@ public interface ConsigneeDetailsMapper {
 	int update(ConsigneeDetails consigneeDetails);
 
 	int add(ConsigneeDetails consigneeDetails);
+	
+	ConsigneeDetails selectById(Integer id);
+
+	List<ConsigneeDetails> selectTab();
 }
