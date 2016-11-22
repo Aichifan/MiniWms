@@ -2,7 +2,7 @@ package ndm.miniwms.dao;
 
 import ndm.miniwms.pojo.CompanyUser;
 
-public interface Login {
+public interface LoginMapper {
 
 	CompanyUser select(CompanyUser companyUser);
 }
