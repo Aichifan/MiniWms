@@ -3,6 +3,8 @@ package ndm.miniwms.serviceImpl;
 import java.util.List;
 
 import ndm.miniwms.pojo.CategoryDetails;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 public interface ICategoryServiceImpl {
 	public List<CategoryDetails> all();
@@ -15,5 +17,5 @@ public interface ICategoryServiceImpl {
 
 	public void selectById(Integer id);
 
-	public void selectTab();
+	public Pagination<CategoryDetails> selectTab(TableModel tm);
 }

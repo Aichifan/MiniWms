@@ -11,8 +11,12 @@ import com.github.pagehelper.PageInfo;
 
 import ndm.miniwms.dao.ConsigneeDetailsMapper;
 import ndm.miniwms.pojo.CompanyDetails;
+import ndm.miniwms.pojo.CompanyUser;
 import ndm.miniwms.pojo.ConsigneeDetails;
+import ndm.miniwms.pojo.SupplierDetails;
 import ndm.miniwms.serviceImpl.IConsigneeServiceImpl;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Service
 public class ConsigneeService implements IConsigneeServiceImpl{
@@ -46,14 +50,12 @@ public class ConsigneeService implements IConsigneeServiceImpl{
 	}
 
 	@Override
-	public void selectTab() {
-		Integer pageNo = 1;
-		Integer pageSize = 3;
-		PageHelper.startPage(pageNo, pageSize);
+	public Pagination<ConsigneeDetails> selectTab(TableModel tm) {
+		PageHelper.startPage(tm.getStart()/tm.getLength() + 1, tm.getLength());
 	    List<ConsigneeDetails> list = consigneeMapper.selectTab();
-	    //ÓÃPageInfo¶Ô½á¹û½øÐÐ°ü×°
+	    //ï¿½ï¿½PageInfoï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½×°
 	    PageInfo<ConsigneeDetails> page = new PageInfo<ConsigneeDetails>(list);
-	    //²âÊÔPageInfoÈ«²¿ÊôÐÔ
+	    //ï¿½ï¿½ï¿½ï¿½PageInfoÈ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    System.out.println(page.getPageNum());
 	    System.out.println(page.getPageSize());
 	    System.out.println(page.getStartRow());
@@ -64,5 +66,12 @@ public class ConsigneeService implements IConsigneeServiceImpl{
 	    System.out.println(page.getLastPage());
 	    System.out.println(page.isHasPreviousPage());
 	    System.out.println(page.isHasNextPage());
+	    
+	    Pagination<ConsigneeDetails> pag=new Pagination<>();
+		pag.setData(list);
+		pag.setRecordsTotal((int) page.getTotal());
+		pag.setRecordsFiltered((int) page.getTotal());
+		
+	    return pag;
 	}
 }

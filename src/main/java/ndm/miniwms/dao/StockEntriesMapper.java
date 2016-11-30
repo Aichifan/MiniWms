@@ -7,6 +7,8 @@ import ndm.miniwms.pojo.StockEntries;
 public interface StockEntriesMapper {
 
 	List<StockEntries> all();
+	
+	List<StockEntries> selectTab();
 
 	int delById(Integer id);
 

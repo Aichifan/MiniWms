@@ -12,7 +12,10 @@ import com.github.pagehelper.PageInfo;
 import ndm.miniwms.dao.CompanyUserMapper;
 import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.CompanyUser;
+import ndm.miniwms.pojo.SupplierDetails;
 import ndm.miniwms.serviceImpl.IUserServiceImpl;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Service
 public class UserService implements IUserServiceImpl{
@@ -46,14 +49,12 @@ public class UserService implements IUserServiceImpl{
 	}
 
 	@Override
-	public void selectTab() {
-		Integer pageNo = 1;
-		Integer pageSize = 3;
-		PageHelper.startPage(pageNo, pageSize);
+	public Pagination<CompanyUser> selectTab(TableModel tm) {
+		PageHelper.startPage(tm.getStart()/tm.getLength() + 1, tm.getLength());
 	    List<CompanyUser> list = userMapper.selectTab();
-	    //ÓÃPageInfo¶Ô½á¹û½øÐÐ°ü×°
+	    //ï¿½ï¿½PageInfoï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½×°
 	    PageInfo<CompanyUser> page = new PageInfo<CompanyUser>(list);
-	    //²âÊÔPageInfoÈ«²¿ÊôÐÔ
+	    //ï¿½ï¿½ï¿½ï¿½PageInfoÈ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    System.out.println(page.getPageNum());
 	    System.out.println(page.getPageSize());
 	    System.out.println(page.getStartRow());
@@ -64,6 +65,13 @@ public class UserService implements IUserServiceImpl{
 	    System.out.println(page.getLastPage());
 	    System.out.println(page.isHasPreviousPage());
 	    System.out.println(page.isHasNextPage());
+	    
+	    Pagination<CompanyUser> pag=new Pagination<>();
+		pag.setData(list);
+		pag.setRecordsTotal((int) page.getTotal());
+		pag.setRecordsFiltered((int) page.getTotal());
+		
+	    return pag;
 	}
 
 }

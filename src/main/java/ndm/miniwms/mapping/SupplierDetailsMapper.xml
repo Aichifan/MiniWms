@@ -8,6 +8,7 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="contact_name" property="contactName" jdbcType="VARCHAR" />
     <result column="contact_tel" property="contactTel" jdbcType="VARCHAR" />
     <result column="contact_fax" property="contactFax" jdbcType="VARCHAR" />
     <result column="contact_email" property="contactEmail" jdbcType="VARCHAR" />
@@ -21,8 +22,26 @@
   select * from supplier_details
   </select>
   
-  <select id = "selectTab"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
-	select * from location_details where 1 = 1
+  <select id = "selectTab"  parameterType="java.lang.String"  resultMap="BaseResultMap1" >
+	select * from supplier_details where 1 = 1
+  </select>
+  <resultMap id="BaseResultMap1" type="ndm.miniwms.pojo.SupplierDetails" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="contact_name" property="contactName" jdbcType="VARCHAR" />
+    <result column="contact_tel" property="contactTel" jdbcType="VARCHAR" />
+    <result column="contact_fax" property="contactFax" jdbcType="VARCHAR" />
+    <result column="contact_email" property="contactEmail" jdbcType="VARCHAR" />
+    <result column="contact_qq" property="contactQq" jdbcType="VARCHAR" />
+    <result column="contact_msn" property="contactMsn" jdbcType="VARCHAR" />
+    <result column="contact_desc" property="contactDesc" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="INTEGER" />
+    <association property="companyDetails" column="company_id" select="getcompny"/>
+  </resultMap>
+  <resultMap id="CompanyResultMap" type="ndm.miniwms.pojo.CompanyDetails">
+		<id column="id" property="id" jdbcType="INTEGER" />
+	</resultMap>
+  <select id = "getcompny"  parameterType="java.lang.Integer"  resultMap="CompanyResultMap" >
+	select * from company_details where id=#{company_id}
   </select>
   
   <delete id="delById" parameterType="java.lang.Integer">

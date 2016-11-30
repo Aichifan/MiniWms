@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ndm.miniwms.pojo.CompanyUser;
+import ndm.miniwms.pojo.SupplierDetails;
 import ndm.miniwms.service.UserService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class UserController {
@@ -58,8 +61,7 @@ public class UserController {
 	
 	@RequestMapping(value="/user/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		userService.selectTab();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<CompanyUser> selectTab(TableModel tm){
+		return userService.selectTab(tm);
 	}
 }

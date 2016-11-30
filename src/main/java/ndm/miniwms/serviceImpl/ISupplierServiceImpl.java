@@ -3,6 +3,8 @@ package ndm.miniwms.serviceImpl;
 import java.util.List;
 
 import ndm.miniwms.pojo.SupplierDetails;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 public interface ISupplierServiceImpl {
 
@@ -16,5 +18,5 @@ public interface ISupplierServiceImpl {
 
 	public void selectById(Integer id);
 
-	public void selectTab();
+	public Pagination<SupplierDetails> selectTab(TableModel tm);
 }

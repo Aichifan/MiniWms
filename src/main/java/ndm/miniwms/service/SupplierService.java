@@ -10,9 +10,11 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 import ndm.miniwms.dao.SupplierDetailsMapper;
-import ndm.miniwms.pojo.LocationDetails;
+import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.SupplierDetails;
 import ndm.miniwms.serviceImpl.ISupplierServiceImpl;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Service
 public class SupplierService implements ISupplierServiceImpl{
@@ -46,14 +48,12 @@ public class SupplierService implements ISupplierServiceImpl{
 	}
 
 	@Override
-	public void selectTab() {
-		Integer pageNo = 1;
-		Integer pageSize = 3;
-		PageHelper.startPage(pageNo, pageSize);
+	public Pagination<SupplierDetails> selectTab(TableModel tm) {
+		PageHelper.startPage(tm.getStart()/tm.getLength() + 1, tm.getLength());
 	    List<SupplierDetails> list = supplierMapper.selectTab();
-	    //ÓÃPageInfo¶Ô½á¹û½øÐÐ°ü×°
+	    //ï¿½ï¿½PageInfoï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½×°
 	    PageInfo<SupplierDetails> page = new PageInfo<SupplierDetails>(list);
-	    //²âÊÔPageInfoÈ«²¿ÊôÐÔ
+	    //ï¿½ï¿½ï¿½ï¿½PageInfoÈ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    System.out.println(page.getPageNum());
 	    System.out.println(page.getPageSize());
 	    System.out.println(page.getStartRow());
@@ -64,5 +64,12 @@ public class SupplierService implements ISupplierServiceImpl{
 	    System.out.println(page.getLastPage());
 	    System.out.println(page.isHasPreviousPage());
 	    System.out.println(page.isHasNextPage());
+	    
+	    Pagination<SupplierDetails> pag=new Pagination<>();
+		pag.setData(list);
+		pag.setRecordsTotal((int) page.getTotal());
+		pag.setRecordsFiltered((int) page.getTotal());
+		
+	    return pag;
 	}
 }

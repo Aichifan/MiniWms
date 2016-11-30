@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ndm.miniwms.pojo.CompanyUser;
 import ndm.miniwms.pojo.ConsigneeDetails;
 import ndm.miniwms.service.ConsigneeService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class ConsigneeController {
@@ -58,8 +61,7 @@ public class ConsigneeController {
 	
 	@RequestMapping(value="/consignee/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		consigneeService.selectTab();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<ConsigneeDetails> selectTab(TableModel tm){
+		return consigneeService.selectTab(tm);
 	}
 }
