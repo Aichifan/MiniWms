@@ -1,0 +1,68 @@
+package ndm.miniwms.service.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
+import ndm.miniwms.dao.StockInventoryMapper;
+import ndm.miniwms.pojo.CompanyDetails;
+import ndm.miniwms.pojo.StockInventory;
+import ndm.miniwms.service.IStockInventoryService;
+import ndm.miniwms.vo.TableModelVO;
+
+@Service("stockInventoryService")
+public class IStockInventoryServiceImpl implements IStockInventoryService{
+
+	@Resource
+	private StockInventoryMapper dao;
+	@Override
+	public List<StockInventory> all() {
+		return this.dao.all();
+	}
+
+	@Override
+	public int delById(Integer id) {
+		return this.dao.delById(id);
+	}
+
+	@Override
+	public int update(StockInventory stockInventory) {
+		return this.dao.update(stockInventory);
+	}
+
+	@Override
+	public int add(StockInventory stockInventory) {
+		return this.dao.add(stockInventory);
+	}
+
+	@Override
+	public StockInventory selectById(Integer id) {
+		return this.dao.selectById(id);
+	}
+
+	@Override
+	public List<StockInventory> selectTab(TableModelVO tableModelVO) {
+		PageHelper.startPage(tableModelVO.getStart(), tableModelVO.getLength());
+	    List<StockInventory> list = this.dao.selectTab();
+	    //��PageInfo�Խ�����а�װ
+	    PageInfo<StockInventory> page = new PageInfo<StockInventory>(list);
+	    //����PageInfoȫ������
+	    System.out.println(page.getPageNum());
+	    System.out.println(page.getPageSize());
+	    System.out.println(page.getStartRow());
+	    System.out.println(page.getEndRow());
+	    System.out.println(page.getTotal());
+	    System.out.println(page.getPages());
+	    System.out.println(page.getFirstPage());
+	    System.out.println(page.getLastPage());
+	    System.out.println(page.isHasPreviousPage());
+	    System.out.println(page.isHasNextPage());
+		return list;
+	}
+
+}
