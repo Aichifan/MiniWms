@@ -23,7 +23,7 @@ public class StockItem {
 	private String description; // 备注
 
 	private BrandDetails brandDetails;//品牌
-	private List<CategoryDetails> categoryDetailsList;//种类
+	private CategoryDetails categoryDetails;//种类
 	private CompanyDetails companyDetails;//公司
 	private List<StockEntries> stockEntriesList;//库存变更记录
 	private List<StockInventory> stockInventoryList;//库存
@@ -49,12 +49,12 @@ public class StockItem {
 		this.brandDetails = brandDetails;
 	}
 
-	public List<CategoryDetails> getCategoryDetailsList() {
-		return categoryDetailsList;
+	public CategoryDetails getCategoryDetails() {
+		return categoryDetails;
 	}
 
-	public void setCategoryDetailsList(List<CategoryDetails> categoryDetailsList) {
-		this.categoryDetailsList = categoryDetailsList;
+	public void setCategoryDetails(CategoryDetails categoryDetails) {
+		this.categoryDetails = categoryDetails;
 	}
 
 	public CompanyDetails getCompanyDetails() {
