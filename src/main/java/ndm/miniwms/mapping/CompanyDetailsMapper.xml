@@ -6,8 +6,7 @@
 		<result column="contact_name" property="contactName" jdbcType="VARCHAR" />
 		<result column="contact_tel" property="contactTel" jdbcType="VARCHAR" />
 		<result column="contact_fax" property="contactFax" jdbcType="VARCHAR" />
-		<result column="contact_email" property="contactEmail"
-			jdbcType="VARCHAR" />
+		<result column="contact_email" property="contactEmail" jdbcType="VARCHAR" />
 		<result column="contact_qq" property="contactQq" jdbcType="VARCHAR" />
 		<result column="contact_msn" property="contactMsn" jdbcType="VARCHAR" />
 		<result column="contact_desc" property="contactDesc" jdbcType="VARCHAR" />
@@ -21,6 +20,11 @@
 	<select id = "selectTab"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
 	select * from company_details where 1 = 1
 	</select>
+	
+	<select id = "selectById"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
+	select * from company_details where id = #{id,jdbcType=INTEGER}
+	</select>
+	
 	<delete id="delById" parameterType="java.lang.Integer">
 		delete from company_details
 		where id = #{id,jdbcType=INTEGER}
@@ -54,4 +58,5 @@
 		#{skuPrev}
 		)
 	</insert>
+	
 </mapper>

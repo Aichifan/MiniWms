@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ndm.miniwms.pojo.BrandDetails;
-import ndm.miniwms.service.BrandService;
+import ndm.miniwms.service.impl.BrandService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class BrandController {
@@ -49,7 +51,7 @@ public class BrandController {
 	@RequestMapping(value="/brand/del",method = RequestMethod.DELETE)
 	@ResponseBody
 	public ResponseEntity<Message> delete(Integer id){
-		brandService.delete(id);
+		brandService.delById(id);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
@@ -62,9 +64,8 @@ public class BrandController {
 	
 	@RequestMapping(value="/brand/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		brandService.selectTab();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<BrandDetails> selectTab(TableModel table){
+		return brandService.selectTab(table);
 	}
 
 }

@@ -12,54 +12,55 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ndm.miniwms.dao.LocationDetailsMapper;
 import ndm.miniwms.pojo.LocationDetails;
+import ndm.miniwms.service.impl.LocationService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class LocationController {
 	
 	@Resource
-	private LocationDetailsMapper locationMapper;
+	private LocationService locationService;
 	
 	@RequestMapping(value="/location/all",method = RequestMethod.GET)
 	@ResponseBody
 	public List<LocationDetails> all(){
-		return locationMapper.all();
+		return locationService.all();
 	}
 	
 	@RequestMapping(value="/location/add",method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Message> insert(LocationDetails locationDetails){
-		locationMapper.add(locationDetails);
+		locationService.add(locationDetails);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/location/upt",method = RequestMethod.PUT)
 	@ResponseBody
 	public ResponseEntity<Message> update(LocationDetails locationDetails){
-		locationMapper.update(locationDetails);
+		locationService.update(locationDetails);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/location/del",method = RequestMethod.DELETE)
 	@ResponseBody
 	public ResponseEntity<Message> delete(Integer id){
-		locationMapper.delById(id);
+		locationService.delById(id);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/location/{id}",method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<Message> selectById(@PathVariable ("id") Integer id){
-		locationMapper.selectById(id);
+		locationService.selectById(id);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/location/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		locationMapper.selectTab();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<LocationDetails> selectTab(TableModel table){
+		return locationService.selectTab(table);
 	}
 }

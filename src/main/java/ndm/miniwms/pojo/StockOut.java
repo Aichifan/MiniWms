@@ -4,23 +4,23 @@ import java.util.Date;
 import java.util.List;
 
 public class StockOut {
-	private Integer id; // 鍑哄簱鍗昳d
-	private Date created; // 鍒涘缓鏃堕棿
-	private Date modified; // 淇敼鏃堕棿
-	private Integer consigneeId; // 鏀惰揣浜篿d
-	private Date date; // 棰勮鍑哄簱
-	private String status; // 鐘舵��
-	private Integer companyId; // 鍏徃id
-	private Integer userId; // 鍒涘缓浜篿d
-	private String billnumber; // 璁㈠崟缂栧彿
+	private Integer id; // 閸戝搫绨遍崡鏄砫
+	private Date created; // 閸掓稑缂撻弮鍫曟？
+	private Date modified; // 娣囶喗鏁奸弮鍫曟？
+	private Integer consigneeId; // 閺�鎯版彛娴滅d
+	private Date date; // 妫板嫯顓搁崙鍝勭氨
+	private String status; // 閻樿埖锟斤拷
+	private Integer companyId; // 閸忣剙寰僫d
+	private Integer userId; // 閸掓稑缂撴禍绡縟
+	private String billnumber; // 鐠併垹宕熺紓鏍у娇
 	private String description; // description
-	private String customerBillnumber; // 客户订单编号
+	private String customerBillnumber; // 瀹㈡埛璁㈠崟缂栧彿
 
-	private List<StockEntries> stockEntriesList;//库存变更记录
-	private List<StockOutEntries> stockOutEntriesList;//出库单条目
-	private ConsigneeDetails consigneeDetails;//收货人
-	private CompanyDetails companyDetails;//公司
-	private CompanyUser companyUser;//用户/创建人
+	private List<StockEntries> stockEntriesList;//搴撳瓨鍙樻洿璁板綍
+	private List<StockOutEntries> stockOutEntriesList;//鍑哄簱鍗曟潯鐩�
+	private ConsigneeDetails consigneeDetails;//鏀惰揣浜�
+	private CompanyDetails companyDetails;//鍏徃
+	private CompanyUser companyUser;//鐢ㄦ埛/鍒涘缓浜�
 
 	public List<StockEntries> getStockEntriesList() {
 		return stockEntriesList;
