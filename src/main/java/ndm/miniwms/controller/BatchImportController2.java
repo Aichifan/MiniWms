@@ -33,8 +33,8 @@ public class BatchImportController2 {
 	// 批量添加
 	@RequestMapping(value = "/batchImport2/stockItem", method = RequestMethod.POST)
 
-	public ResponseEntity<Message> toInsertStockItems(@RequestParam("stoFile")MultipartFile  stoFile) {
-		stockItemService.allStockItem(stoFile);
+	public ResponseEntity<Message> toInsertStockItems(MultipartFile Filedata) {
+		stockItemService.allStockItem(Filedata);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 }
