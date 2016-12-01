@@ -31,7 +31,7 @@ public class StockInEntriesController {
 
 	@Resource
 	private IStockInService stockInService;
-	
+
 	@Resource
 	private IStockInventoryService stockInventoryService;
 
@@ -47,10 +47,13 @@ public class StockInEntriesController {
 			stockInEntries.setInId(id);
 			this.service.add(stockInEntries);
 			StockInventory stockInventory1 = stockInventoryService.selectItem(stockInEntries.getItemId());
-			StockInventory stockInventory = new StockInventory();
-			stockInventory.setItemId(stockInEntries.getItemId());
-			stockInventory.setQuantity(stockInventory1.getQuantity()+stockInEntries.getQuantity());
-			stockInventoryService.updateQuantity(stockInventory);
+			if (stockInventory1 != null) {
+				StockInventory stockInventory = new StockInventory();
+				stockInventory.setItemId(stockInEntries.getItemId());
+
+				stockInventory.setQuantity(stockInventory1.getQuantity() + stockInEntries.getQuantity());
+				stockInventoryService.updateQuantity(stockInventory);
+			}
 		}
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 
