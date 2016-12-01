@@ -149,25 +149,25 @@
             if ($('#quantity').val() == "") {
               $('#quantity').val(1);
             }
-//             t.row.add([ $('#item_id').val(), $('#quantity').val() ])
-//             .draw(false);
+            t.row.add([ $('#item_id').val(), $('#quantity').val() ])
+            .draw(false);
 // 			console.log(t.data())
-			if(t.data().length == 0){
-			  t.row.add([ $('#item_id').val(), $('#quantity').val() ])
-     			.draw(false);
-			}else{
-	            $.each(t.data(), function(i, e) {
-	              console.log(t.data());
-	              console.log($('#item_id').val());
-	              if (e[0] == $('#item_id').val()) {
-	                var newData = [e[0], parseInt($('#quantity').val())+parseInt(e[1])]
-	              	t.row().data(newData).draw();
-	              }else{
-	                t.row.add([ $('#item_id').val(), $('#quantity').val() ])
-	                .draw(false);
-	              }
-	            });
-			}
+// 			if(t.data().length == 0){
+// 			  t.row.add([ $('#item_id').val(), $('#quantity').val() ])
+//      			.draw(false);
+// 			}else{
+// 	            $.each(t.data(), function(i, e) {
+// 	              console.log(i+"+"+e[0]);
+// 	              console.log("val+"+$('#item_id').val());
+// 	              if (e[0] == $('#item_id').val()) {
+// 	                var newData = [e[0], parseInt($('#quantity').val())+parseInt(e[1])]
+// 	              	t.row().data(newData).draw();
+// 	              }else{
+// 	                t.row.add([ $('#item_id').val(), $('#quantity').val() ])
+// 	                .draw(false);
+// 	              }
+// 	            });
+// 			}
           }
 
         });
