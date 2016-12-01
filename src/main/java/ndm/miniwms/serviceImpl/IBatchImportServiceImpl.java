@@ -1,14 +1,15 @@
 package ndm.miniwms.serviceImpl;
 
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public interface IBatchImportServiceImpl {
-	public void addBrand(CommonsMultipartFile brand);
-	public void addCompany(CommonsMultipartFile company);
-	public void addSupplier(CommonsMultipartFile supplier);
-	public void addCategory(CommonsMultipartFile category);
-	public void addConsignee(CommonsMultipartFile consignee);
-	public void addUser(CommonsMultipartFile user);
-	public void addLocation(CommonsMultipartFile location);
-	public void addWarehouse(CommonsMultipartFile warehouse);
+	public void addBrand(MultipartFile brand);
+	public void addCompany(MultipartFile company);
+	public void addSupplier(MultipartFile supplier);
+	public void addCategory(MultipartFile category);
+	public void addConsignee(MultipartFile consignee);
+	public void addUser(MultipartFile user);
+	public void addLocation(MultipartFile location);
+	public void addWarehouse(MultipartFile warehouse);
 }
