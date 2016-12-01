@@ -1,7 +1,6 @@
 package ndm.miniwms.pojo;
 
 import java.util.Date;
-import java.util.List;
 
 public class CompanyRole {
 	private Integer id; // 角色id
@@ -10,15 +9,6 @@ public class CompanyRole {
 	private String name; // 名称
 	private Integer companyId; // 公司id
 	private CompanyDetails companyDetails;//公司对象
-	private List<SysMenu> MenuList;//系统列表
-	
-	public List<SysMenu> getMenuList() {
-		return MenuList;
-	}
-
-	public void setMenuList(List<SysMenu> menuList) {
-		MenuList = menuList;
-	}
 
 	public CompanyDetails getCompanyDetails() {
 		return companyDetails;
