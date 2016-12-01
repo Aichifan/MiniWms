@@ -14,8 +14,12 @@ public interface IStockInventoryService {
 	int update(StockInventory stockInventory);
 
 	int add(StockInventory stockInventory);
-	
+
 	StockInventory selectById(Integer id);
-	
+
 	List<StockInventory> selectTab(TableModelVO tableModelVO);
+
+	StockInventory selectItem(Integer itemId);
+
+	int updateQuantity(StockInventory stockInventory);
 }

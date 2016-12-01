@@ -46,4 +46,14 @@ public class IStockInEntriesServiceImpl implements IStockInEntriesService{
 		return this.stockInEntriesMapper.selectTab();
 	}
 
+	@Override
+	public List<StockInEntries> selectItem(Integer itemId) {
+		return this.stockInEntriesMapper.selectItem(itemId);
+	}
+
+	@Override
+	public int updateQuantity(StockInEntries stockInEntries) {
+		return this.stockInEntriesMapper.updateQuantity(stockInEntries);
+	}
+
 }

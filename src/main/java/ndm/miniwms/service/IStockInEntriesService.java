@@ -17,4 +17,8 @@ public interface IStockInEntriesService {
 	StockInEntries selectById(Integer id);
 	
 	List<StockInEntries> selectTab();
+	
+	List<StockInEntries> selectItem(Integer itemId);
+	
+	int updateQuantity(StockInEntries stockInEntries);
 }

@@ -65,4 +65,14 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 		return list;
 	}
 
+	@Override
+	public StockInventory selectItem(Integer itemId) {
+		return this.dao.selectItem(itemId);
+	}
+
+	@Override
+	public int updateQuantity(StockInventory stockInventory) {
+		return this.dao.updateQuantity(stockInventory);
+	}
+
 }
