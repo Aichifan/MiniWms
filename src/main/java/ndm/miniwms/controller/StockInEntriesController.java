@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ndm.miniwms.pojo.StockIn;
 import ndm.miniwms.pojo.StockInEntries;
+import ndm.miniwms.pojo.StockInventory;
 import ndm.miniwms.service.IStockInEntriesService;
 import ndm.miniwms.service.IStockInService;
+import ndm.miniwms.service.IStockInventoryService;
 import ndm.miniwms.vo.Message;
 
 @Controller
@@ -30,6 +32,9 @@ public class StockInEntriesController {
 	@Resource
 	private IStockInService stockInService;
 
+	@Resource
+	private IStockInventoryService stockInventoryService;
+
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Message> insert(@RequestBody StockInEntries[] stockInEntriesList) {
@@ -41,8 +46,16 @@ public class StockInEntriesController {
 			int id = list.get(list.size() - 1).getId();
 			stockInEntries.setInId(id);
 			this.service.add(stockInEntries);
+			StockInventory stockInventory1 = stockInventoryService.selectItem(stockInEntries.getItemId());
+			if (stockInventory1 != null) {
+				StockInventory stockInventory = new StockInventory();
+				stockInventory.setItemId(stockInEntries.getItemId());
+
+				stockInventory.setQuantity(stockInventory1.getQuantity() + stockInEntries.getQuantity());
+				stockInventoryService.updateQuantity(stockInventory);
+			}
 		}
-			return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
-		
+		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+
 	}
 }

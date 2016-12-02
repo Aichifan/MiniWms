@@ -17,5 +17,10 @@ public interface IStockInService {
 	
 	StockIn selectById(Integer id);
 	
+<<<<<<< HEAD
 	List<StockIn> selectTab(TableModel tableModelVO);
+=======
+	List<StockIn> selectTab(TableModelVO tableModelVO);
+	int updateStatus(StockIn stockIn);
+>>>>>>> cuiyuanhang
 }

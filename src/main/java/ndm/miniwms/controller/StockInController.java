@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -49,8 +50,21 @@ public class StockInController {
 	// 修改商品
 	@RequestMapping(value = "/upt", method = RequestMethod.PUT)
 	@ResponseBody
-	public ResponseEntity<Message> toUpdateStockItem(StockIn stockIn) {
+	public ResponseEntity<Message> toUpdateStockItem(@RequestBody StockIn stockIn) {
+		System.out.println(stockIn.getId());
 		int num = service.update(stockIn);
+		if (num == 0) {
+			return new ResponseEntity<Message>(new Message(), HttpStatus.UNAUTHORIZED);
+		} else {
+			return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+		}
+	}
+	//修改状态
+	@RequestMapping(value = "/uptStatus", method = RequestMethod.PUT)
+	@ResponseBody
+	public ResponseEntity<Message> toUpdateStatus(@RequestBody StockIn stockIn) {
+		System.out.println(stockIn.getId());
+		int num = service.updateStatus(stockIn);
 		if (num == 0) {
 			return new ResponseEntity<Message>(new Message(), HttpStatus.UNAUTHORIZED);
 		} else {

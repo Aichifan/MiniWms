@@ -14,6 +14,7 @@ public interface IStockInventoryService {
 	int delById(Integer id);
 
 	int update(StockInventory stockInventory);
+<<<<<<< HEAD
 	
 	public int add(StockInventory stockInventory);
 
@@ -22,4 +23,16 @@ public interface IStockInventoryService {
 	public StockInventory selectById(Integer id);
 
 	public Pagination<StockInventory> selectTab(TableModel table);
+=======
+
+	int add(StockInventory stockInventory);
+
+	StockInventory selectById(Integer id);
+
+	List<StockInventory> selectTab(TableModelVO tableModelVO);
+
+	StockInventory selectItem(Integer itemId);
+
+	int updateQuantity(StockInventory stockInventory);
+>>>>>>> cuiyuanhang
 }

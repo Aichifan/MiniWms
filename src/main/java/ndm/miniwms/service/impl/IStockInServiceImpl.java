@@ -64,4 +64,9 @@ public class IStockInServiceImpl implements IStockInService{
 		return list;
 	}
 
+	@Override
+	public int updateStatus(StockIn stockIn) {
+		return this.stockInMapperDao.updateStatus(stockIn);
+	}
+
 }
