@@ -16,7 +16,7 @@ import ndm.miniwms.pojo.StockIn;
 import ndm.miniwms.service.IStockInService;
 import ndm.miniwms.vo.Message;
 import ndm.miniwms.vo.Pagination;
-import ndm.miniwms.vo.TableModelVO;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 @RequestMapping("/stockIn")
@@ -85,8 +85,8 @@ public class StockInController {
 	//分页查询
 	@RequestMapping(value="/page",method = RequestMethod.GET)
 	@ResponseBody
-	public Pagination<StockIn> selectTab(TableModelVO tableModelVO){
-		TableModelVO tableModelVO1 = new TableModelVO();
+	public Pagination<StockIn> selectTab(TableModel tableModelVO){
+		TableModel tableModelVO1 = new TableModel();
 		tableModelVO1.setDraw(tableModelVO.getDraw());
 		tableModelVO1.setLength(tableModelVO.getLength());
 		tableModelVO1.setStart(tableModelVO.getStart()/10+1);

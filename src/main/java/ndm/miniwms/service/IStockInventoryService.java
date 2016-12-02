@@ -3,7 +3,9 @@ package ndm.miniwms.service;
 import java.util.List;
 
 import ndm.miniwms.pojo.StockInventory;
-import ndm.miniwms.vo.TableModelVO;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
+
 
 public interface IStockInventoryService {
 
@@ -12,10 +14,12 @@ public interface IStockInventoryService {
 	int delById(Integer id);
 
 	int update(StockInventory stockInventory);
+	
+	public int add(StockInventory stockInventory);
 
-	int add(StockInventory stockInventory);
-	
-	StockInventory selectById(Integer id);
-	
-	List<StockInventory> selectTab(TableModelVO tableModelVO);
+	public int delete(Integer id);
+
+	public StockInventory selectById(Integer id);
+
+	public Pagination<StockInventory> selectTab(TableModel table);
 }

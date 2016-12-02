@@ -9,13 +9,30 @@
     <result column="company_id" property="companyId" jdbcType="INTEGER" />
   </resultMap>
   
+  <!-- 查詢公司名称 -->
+  <resultMap type="ndm.miniwms.pojo.BrandDetails" id="TabMap">
+  <id property="id" column="id" />
+  <result property="companyId" column="company_id" jdbcType="INTEGER" />
+  <collection property="companyDetails" column="company_id" select="getCompanyName">
+  </collection>
+  </resultMap>
+  
   <select id="all" resultMap="BaseResultMap" parameterType="java.lang.Integer">
   select * from brand_details 
   </select>
   
-  <select id = "selectTab"  parameterType="java.lang.String"  resultMap="BaseResultMap" >
-	select * from brand_details where 1 = 1
-	</select>
+  <select id = "selectTab"  parameterType="java.lang.String"  resultMap="TabMap" >
+	select * from brand_details 
+  </select>
+  
+  <select id="getCompanyName" parameterType="java.lang.String" resultType="ndm.miniwms.pojo.CompanyDetails">
+  select * from company_details
+  </select>
+  
+  
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select * from brand_details where id=#{id}
+  </select>
   
   <delete id="delById" parameterType="java.lang.Integer">
   delete from brand_details where id = #{id}

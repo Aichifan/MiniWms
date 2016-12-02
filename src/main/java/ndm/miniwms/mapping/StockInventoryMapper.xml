@@ -10,8 +10,52 @@
 	    <result column="in_id" property="inId" jdbcType="INTEGER" />
 	</resultMap>
 	
-  <select id="all" resultMap="BaseResultMap" >
+	<resultMap type="ndm.miniwms.pojo.StockInventory" id="ListMap">
+    <id property="id" column="id" />
+  	<result property="companyId" column="company_id" jdbcType="INTEGER" />
+  	<result property="itemId" column="item_id" jdbcType="INTEGER" />
+  	<result property="locationId" column="location_id" jdbcType="INTEGER" />
+  	<result property="inId" column="in_id" jdbcType="INTEGER" />
+  	<collection property="companyDetails" column="company_id" select="getCompanyId">
+  	</collection>
+  	<collection property="location" column="location_id" select="getLocationId">
+  	</collection>
+  	<collection property="stockIn" column="in_id" select="getInId">
+  	</collection>
+  	<collection property="stockItem" column="item_id" select="getItemId">
+  	</collection>
+  	</resultMap>
+	
+  <select id="all" resultMap="ListMap" >
     select * from stock_inventory
+  </select>
+  
+  <select id = "selectTab" resultMap="BaseResultMap" >
+  	select * from stock_inventory
+  </select>
+  
+  <!-- 公司对象 -->
+  <select id="getCompanyId" parameterType="java.lang.String" resultType="ndm.miniwms.pojo.CompanyDetails">
+  	select * from company_details where id = #{id}
+  </select>
+  
+  <!-- 仓库对象 -->
+  <select id="getLocationId" parameterType="java.lang.String" resultType="ndm.miniwms.pojo.LocationDetails">
+  	select * from location_details where id = #{id}
+  </select>
+  
+  <!--入库对象 -->
+  <select id="getInId" parameterType="java.lang.String" resultType="ndm.miniwms.pojo.StockIn">
+  	select * from stock_in where id = #{id}
+  </select>
+  
+  <!-- 商品对象 -->
+  <select id="getItemId" parameterType="java.lang.String" resultType="ndm.miniwms.pojo.StockItem">
+  	select * from stock_item where id = #{id}
+  </select>
+  
+  <select id = "selectById" resultMap = "BaseResultMap" >
+  	select * from stock_inventory where id = #{id}
   </select>
   
   <delete id="delById" parameterType="java.lang.Integer" >
@@ -19,14 +63,14 @@
   </delete>
   
   <insert id="add" parameterType="ndm.miniwms.pojo.StockInventory" >
-    insert into stock_inventory (created,modified,locked,item_id,quantity,last_operator_id,company_id,location_id,in_id,
+    insert into stock_inventory (created,modified,item_id,quantity,last_operator_id,company_id,location_id,in_id,
     UDF1,UDF2,UDF3,UDF4,UDF5,UDF6)
-    values (#{created}, #{modified},#{locked}, #{itemId}, #{quantity},#{lastOperatorId},#{companyId},#{locationId},#{inId},
+    values (#{created}, #{modified},#{itemId}, #{quantity},#{lastOperatorId},#{companyId},#{locationId},#{inId},
     #{UDF1},#{UDF2},#{UDF3},#{UDF4},#{UDF5},#{UDF6})
   </insert>
   
   <update id="update" parameterType="ndm.miniwms.pojo.StockInventory">
-  	update stock_inventory set created=#{created},modified=#{modified},locked=#{locked}, item_id=#{itemId}, quantity=#{quantity},
+  	update stock_inventory set created=#{created},modified=#{modified},item_id=#{itemId}, quantity=#{quantity},
   	last_operator_id=#{lastOperatorId}, company_id=#{companyId}, location_id=#{locationId}, in_id=#{inId},
   	UDF1=#{UDF1},UDF2=#{UDF2},UDF3=#{UDF3},UDF4=#{UDF4},UDF5=#{UDF5},UDF6=#{UDF6}
   	where id = #{id}

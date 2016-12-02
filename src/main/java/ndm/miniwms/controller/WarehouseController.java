@@ -12,54 +12,55 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ndm.miniwms.dao.WarehouseMapper;
 import ndm.miniwms.pojo.Warehouse;
+import ndm.miniwms.service.WarehouseService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class WarehouseController {
 	
 	@Resource
-	private WarehouseMapper warehouseMapper;
+	private WarehouseService warehouseService;
 	
 	@RequestMapping(value="/warehouse/all",method = RequestMethod.GET)
 	@ResponseBody
 	public List<Warehouse> all(){
-		return warehouseMapper.all();
+		return warehouseService.all();
 	}
 	
 	@RequestMapping(value="/warehouse/add",method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Message> insert(Warehouse warehouse){
-		warehouseMapper.add(warehouse);
+		warehouseService.add(warehouse);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/warehouse/upt",method = RequestMethod.PUT)
 	@ResponseBody
 	public ResponseEntity<Message> update(Warehouse warehouse){
-		warehouseMapper.update(warehouse);
+		warehouseService.update(warehouse);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/warehouse/del",method = RequestMethod.DELETE)
 	@ResponseBody
 	public ResponseEntity<Message> delete(Integer id){
-		warehouseMapper.delById(id);
+		warehouseService.delete(id);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/warehouse/{id}",method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<Message> selectById(@PathVariable ("id") Integer id){
-		warehouseMapper.selectById(id);
+		warehouseService.selectById(id);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/warehouse/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		warehouseMapper.selectTab();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<Warehouse> selectTab(TableModel table){
+		return warehouseService.selectTab(table);
 	}
 }

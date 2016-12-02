@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.sun.mail.handlers.image_gif;
 
 import ndm.miniwms.dao.BrandDetailsMapper;
 import ndm.miniwms.dao.CategoryDetailsMapper;

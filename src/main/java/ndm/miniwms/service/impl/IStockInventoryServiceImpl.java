@@ -10,10 +10,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 import ndm.miniwms.dao.StockInventoryMapper;
-import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.StockInventory;
 import ndm.miniwms.service.IStockInventoryService;
-import ndm.miniwms.vo.TableModelVO;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Service("stockInventoryService")
 public class IStockInventoryServiceImpl implements IStockInventoryService{
@@ -46,7 +46,7 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 	}
 
 	@Override
-	public List<StockInventory> selectTab(TableModelVO tableModelVO) {
+	public Pagination<StockInventory> selectTab(TableModel tableModelVO) {
 		PageHelper.startPage(tableModelVO.getStart(), tableModelVO.getLength());
 	    List<StockInventory> list = this.dao.selectTab();
 	    //��PageInfo�Խ�����а�װ
@@ -64,5 +64,10 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 	    System.out.println(page.isHasNextPage());
 		return list;
 	}
+
+    @Override
+    public int delete(Integer id) {
+        return this.delById(id);
+    }
 
 }
