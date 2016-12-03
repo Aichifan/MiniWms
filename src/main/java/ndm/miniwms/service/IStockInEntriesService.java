@@ -1,10 +1,11 @@
-package ndm.miniwms.dao;
+package ndm.miniwms.service;
 
 import java.util.List;
 
 import ndm.miniwms.pojo.StockInEntries;
 
-public interface StockInEntriesMapper {
+public interface IStockInEntriesService {
+
 	List<StockInEntries> all();
 	
 	int delById(Integer id);

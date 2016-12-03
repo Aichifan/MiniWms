@@ -17,7 +17,7 @@
   </delete>
   
   <insert id="add" parameterType="ndm.miniwms.pojo.StockInEntries" >
-    insert into sotck_in_entries (in_id,item_id,quantity,location_id,UDF1,UDF2,UDF3,UDF4,UDF5,UDF6)
+    insert into stock_in_entries (in_id,item_id,quantity,location_id,UDF1,UDF2,UDF3,UDF4,UDF5,UDF6)
     values (#{inId}, #{itemId}, #{quantity},#{locationId},#{UDF1},#{UDF2},#{UDF3},#{UDF4},#{UDF5},#{UDF6})
   </insert>
   

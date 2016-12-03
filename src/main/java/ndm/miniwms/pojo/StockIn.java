@@ -9,7 +9,7 @@ public class StockIn {
 	private Date modified; // 修改时间
 	private Integer supplierId; // 供应商id
 	private Date date; // 预计入库
-	private String status; // 状态
+	private boolean status; // 状态
 	private Integer companyId; // 公司id
 	private Integer userId; // 创建人id
 	private String billnumber; // 订单编号
@@ -17,7 +17,7 @@ public class StockIn {
 	private String customerBillnumber; // 客户订单编号
 
 	private SupplierDetails supplierDetails;//供应商
-	private StockInventory stockInventory;//库存
+	private List<StockInventory> stockInventoryList;//库存
 	private	List<StockInEntries> stockInEntriesList;//入库单明细
 	private CompanyDetails companyDetails;//公司
 	private CompanyUser companyUser;//用户
@@ -30,12 +30,14 @@ public class StockIn {
 		this.supplierDetails = supplierDetails;
 	}
 
-	public StockInventory getStockInventory() {
-		return stockInventory;
+	
+
+	public List<StockInventory> getStockInventoryList() {
+		return stockInventoryList;
 	}
 
-	public void setStockInventory(StockInventory stockInventory) {
-		this.stockInventory = stockInventory;
+	public void setStockInventoryList(List<StockInventory> stockInventoryList) {
+		this.stockInventoryList = stockInventoryList;
 	}
 
 	public List<StockInEntries> getStockInEntriesList() {
@@ -102,11 +104,13 @@ public class StockIn {
 		this.date = date;
 	}
 
-	public String getStatus() {
+	
+
+	public boolean isStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 
