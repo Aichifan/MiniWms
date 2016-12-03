@@ -45,6 +45,11 @@ public class StockInventoryServiceImpl implements IStockInventoryService{
 	public StockInventory selectById(Integer id) {
 		return stockInventoryMapper.selectById(id);
 	}
+	
+	@Override
+    public StockInventory selectItem(Integer id) {
+        return stockInventoryMapper.selectById(id);
+    }
 
 	@Override
 	public Pagination<StockInventory> selectTab(TableModel table) {
@@ -65,6 +70,11 @@ public class StockInventoryServiceImpl implements IStockInventoryService{
     @Override
     public int delById(Integer id) {
         return this.delete(id);
+    }
+
+    @Override
+    public int updateQuantity(StockInventory stockInventory) {
+        return stockInventoryMapper.updateQuantity(stockInventory);
     }
 
 

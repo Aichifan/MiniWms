@@ -10,9 +10,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 import ndm.miniwms.dao.WarehouseMapper;
-import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.Warehouse;
 import ndm.miniwms.serviceImpl.IWarehouseServiceImpl;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Service
 public class WarehouseService implements IWarehouseServiceImpl{
@@ -46,24 +47,18 @@ public class WarehouseService implements IWarehouseServiceImpl{
 	}
 
 	@Override
-	public void selectTab() {
-		Integer pageNo = 1;
-		Integer pageSize = 3;
-		PageHelper.startPage(pageNo, pageSize);
+	public Pagination<Warehouse> selectTab(TableModel model) {
+		PageHelper.startPage(model.getPageNum(), model.getLength());
 	    List<Warehouse> list = warehouseMapper.selectTab();
-	    //ÓÃPageInfo¶Ô½á¹û½øÐÐ°ü×°
+	    //ï¿½ï¿½PageInfoï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½×°
 	    PageInfo<Warehouse> page = new PageInfo<Warehouse>(list);
-	    //²âÊÔPageInfoÈ«²¿ÊôÐÔ
-	    System.out.println(page.getPageNum());
-	    System.out.println(page.getPageSize());
-	    System.out.println(page.getStartRow());
-	    System.out.println(page.getEndRow());
-	    System.out.println(page.getTotal());
-	    System.out.println(page.getPages());
-	    System.out.println(page.getFirstPage());
-	    System.out.println(page.getLastPage());
-	    System.out.println(page.isHasPreviousPage());
-	    System.out.println(page.isHasNextPage());
+	    
+	    Pagination<Warehouse> warehousePage = new Pagination<Warehouse>();
+	    warehousePage.setData(list);
+	    warehousePage.setDraw(model.getDraw());
+	    warehousePage.setRecordsFiltered((int)page.getTotal());
+	    warehousePage.setRecordsTotal((int)page.getTotal());
+	    return warehousePage;
 	}
 
 }

@@ -32,4 +32,7 @@ public class TableModel {
 		this.length = length;
 	}
 	
+	public Integer getPageNum() {
+	    return start/length + 1;
+	}
 }

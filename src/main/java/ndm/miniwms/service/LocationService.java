@@ -10,9 +10,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 import ndm.miniwms.dao.LocationDetailsMapper;
-import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.LocationDetails;
 import ndm.miniwms.serviceImpl.ILocationServiceImpl;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Service
 public class LocationService implements ILocationServiceImpl{
@@ -46,24 +47,18 @@ public class LocationService implements ILocationServiceImpl{
 	}
 
 	@Override
-	public void selectTab() {
-		Integer pageNo = 1;
-		Integer pageSize = 3;
-		PageHelper.startPage(pageNo, pageSize);
+	public Pagination<LocationDetails> selectTab(TableModel model) {
+		PageHelper.startPage(model.getPageNum(), model.getLength());
 	    List<LocationDetails> list = locationMapper.selectTab();
-	    //ÓÃPageInfo¶Ô½á¹û½øÐÐ°ü×°
+	    //ï¿½ï¿½PageInfoï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½×°
 	    PageInfo<LocationDetails> page = new PageInfo<LocationDetails>(list);
-	    //²âÊÔPageInfoÈ«²¿ÊôÐÔ
-	    System.out.println(page.getPageNum());
-	    System.out.println(page.getPageSize());
-	    System.out.println(page.getStartRow());
-	    System.out.println(page.getEndRow());
-	    System.out.println(page.getTotal());
-	    System.out.println(page.getPages());
-	    System.out.println(page.getFirstPage());
-	    System.out.println(page.getLastPage());
-	    System.out.println(page.isHasPreviousPage());
-	    System.out.println(page.isHasNextPage());
+	    //ï¿½ï¿½ï¿½ï¿½PageInfoÈ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    Pagination<LocationDetails> locationPage = new Pagination<LocationDetails>();
+	    locationPage.setDraw(model.getDraw());
+	    locationPage.setData(list);
+	    locationPage.setRecordsFiltered((int)page.getTotal());
+	    locationPage.setRecordsTotal((int)page.getTotal());
+	    return locationPage;
 	}
 
 }

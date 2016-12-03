@@ -29,6 +29,11 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 	public int delById(Integer id) {
 		return this.dao.delById(id);
 	}
+	
+	@Override
+    public int delete(Integer id) {
+        return this.delById(id);
+    }
 
 	@Override
 	public int update(StockInventory stockInventory) {
@@ -47,7 +52,7 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 
 	@Override
 	public Pagination<StockInventory> selectTab(TableModel tableModelVO) {
-		PageHelper.startPage(tableModelVO.getStart(), tableModelVO.getLength());
+		PageHelper.startPage(tableModelVO.getPageNum(), tableModelVO.getLength());
 	    List<StockInventory> list = this.dao.selectTab();
 	    //��PageInfo�Խ�����а�װ
 	    PageInfo<StockInventory> page = new PageInfo<StockInventory>(list);
@@ -62,7 +67,12 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 	    System.out.println(page.getLastPage());
 	    System.out.println(page.isHasPreviousPage());
 	    System.out.println(page.isHasNextPage());
-		return list;
+	    Pagination<StockInventory> p = new Pagination<StockInventory>();
+	    p.setData(list);
+	    p.setRecordsFiltered((int)page.getTotal());
+	    p.setRecordsTotal((int)page.getTotal());
+	    p.setDraw(tableModelVO.getDraw());
+		return p;
 	}
 
 	@Override

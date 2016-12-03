@@ -12,4 +12,6 @@ public interface CompanyRoleMapper {
 	int update(CompanyRole companyRole);
 
 	int add(CompanyRole companyRole);
+	
+	public CompanyRole selById(Integer id);
 }

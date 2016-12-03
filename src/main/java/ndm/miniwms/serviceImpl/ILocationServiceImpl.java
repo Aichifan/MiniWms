@@ -3,6 +3,8 @@ package ndm.miniwms.serviceImpl;
 import java.util.List;
 
 import ndm.miniwms.pojo.LocationDetails;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 public interface ILocationServiceImpl {
 	public List<LocationDetails> all();
@@ -15,5 +17,5 @@ public interface ILocationServiceImpl {
 
 	public void selectById(Integer id);
 
-	public void selectTab();
+	public Pagination<LocationDetails> selectTab(TableModel model);
 }
