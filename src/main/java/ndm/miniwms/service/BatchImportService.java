@@ -15,6 +15,7 @@ import org.jxls.reader.ReaderBuilder;
 import org.jxls.reader.XLSReadStatus;
 import org.jxls.reader.XLSReader;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.xml.sax.SAXException;
 
@@ -72,7 +73,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	private CategoryDetailsMapper categoryMapper;
 	
 	@Override
-	public void addBrand(CommonsMultipartFile brand){
+	public void addBrand(MultipartFile brand){
 		String xmlConfig ="/doc/Brand.xml";
 		InputStream inputXML = new BufferedInputStream(getClass().getResourceAsStream(xmlConfig));  
 		XLSReader mainReader=null;
@@ -101,7 +102,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	}
 
 	@Override
-	public void addCompany(CommonsMultipartFile company) {
+	public void addCompany(MultipartFile company) {
 		String xml = "/doc/Company.xml";
 		InputStream XML = new BufferedInputStream(getClass().getResourceAsStream(xml));
 		XLSReader mainReader = null;
@@ -140,7 +141,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	}
 
 	@Override
-	public void addSupplier(CommonsMultipartFile supplier) {
+	public void addSupplier(MultipartFile supplier) {
 		String xml = "/doc/Supplier.xml";
 		InputStream XML = new BufferedInputStream(getClass().getResourceAsStream(xml));
 		XLSReader mainReader = null;
@@ -178,7 +179,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	}
 
 	@Override
-	public void addCategory(CommonsMultipartFile category) {
+	public void addCategory(MultipartFile category) {
 		String xml = "/doc/Category.xml";
 		InputStream XML = new BufferedInputStream(getClass().getResourceAsStream(xml));
 		XLSReader mainReader = null;
@@ -202,7 +203,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	}
 
 	@Override
-	public void addConsignee(CommonsMultipartFile consignee) {
+	public void addConsignee(MultipartFile consignee) {
 		String xml = "/doc/Consignee.xml";
 		InputStream XML = new BufferedInputStream(getClass().getResourceAsStream(xml));
 		XLSReader mainReader = null;
@@ -240,7 +241,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	}
 
 	@Override
-	public void addUser(CommonsMultipartFile user) {
+	public void addUser(MultipartFile user) {
 		String xml = "/doc/User.xml";
 		InputStream XML = new BufferedInputStream(getClass().getResourceAsStream(xml));
 		XLSReader mainReader = null;
@@ -280,7 +281,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	}
 
 	@Override
-	public void addLocation(CommonsMultipartFile location) {
+	public void addLocation(MultipartFile location) {
 		String xml = "/doc/Location.xml";
 		InputStream XML = new BufferedInputStream(getClass().getResourceAsStream(xml));
 		XLSReader mainReader = null;
@@ -291,7 +292,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 			List<CompanyDetails> companyDetails = companyMapper.all();
 			List<Warehouse> warehouse = warehouseMapper.all();
 			Map<String , Object> beans = new HashMap<>();
-			beans.put("lovationVOs", locationVO);
+			beans.put("locationVOs", locationVO);
 			XLSReadStatus read = mainReader.read(bis, beans);
 			for(LocationVO locationVo : locationVO){
 				LocationDetails locations = new LocationDetails();
@@ -328,7 +329,7 @@ public class BatchImportService implements IBatchImportServiceImpl{
 	}
 
 	@Override
-	public void addWarehouse(CommonsMultipartFile warehouse) {
+	public void addWarehouse(MultipartFile warehouse) {
 		String xml = "/doc/Warehouse.xml";
 		InputStream XML = new BufferedInputStream(getClass().getResourceAsStream(xml));
 		XLSReader mainReader = null;

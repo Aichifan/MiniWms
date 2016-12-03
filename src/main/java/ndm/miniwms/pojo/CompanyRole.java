@@ -10,17 +10,18 @@ public class CompanyRole {
 	private String name; // 名称
 	private Integer companyId; // 公司id
 	private CompanyDetails companyDetails;//公司对象
-	private List<SysMenu> MenuList;//系统列表
 	
+	private List<SysMenu> menuList;
+
 	public List<SysMenu> getMenuList() {
-		return MenuList;
-	}
+        return menuList;
+    }
 
-	public void setMenuList(List<SysMenu> menuList) {
-		MenuList = menuList;
-	}
+    public void setMenuList(List<SysMenu> menuList) {
+        this.menuList = menuList;
+    }
 
-	public CompanyDetails getCompanyDetails() {
+    public CompanyDetails getCompanyDetails() {
 		return companyDetails;
 	}
 

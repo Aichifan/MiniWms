@@ -39,7 +39,9 @@ import ndm.miniwms.pojo.StockItemPhoto;
 import ndm.miniwms.service.StockItemPhotoService;
 import ndm.miniwms.service.StockItemService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
 import ndm.miniwms.vo.StockItemVo;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class StockItemController {
@@ -110,9 +112,8 @@ public class StockItemController {
 	//分页查询
 	@RequestMapping(value="/stockItem/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		stockItemService.selectStockItem();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<StockItem> selectTab(TableModel table){
+		return stockItemService.selectTab(table);
 	}
 
 }

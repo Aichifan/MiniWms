@@ -7,7 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.multipart.MultipartFile;
 
 import ndm.miniwms.pojo.StockItem;
+import ndm.miniwms.vo.Pagination;
 import ndm.miniwms.vo.StockItemVo;
+import ndm.miniwms.vo.TableModel;
 
 public interface StockItemService {
 
@@ -29,5 +31,5 @@ public interface StockItemService {
 	//批量添加
 	 void allStockItem(MultipartFile file);
 	 
-	 void selectStockItem();
+	 Pagination<StockItem> selectTab(TableModel table);
 }
