@@ -16,4 +16,5 @@ public interface StockInMapper {
 	StockIn selectById(Integer id);
 	
 	List<StockIn> selectTab();
+	int updateStatus(StockIn stockIn);
 }

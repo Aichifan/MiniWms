@@ -1,5 +1,6 @@
 package ndm.miniwms.controller;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.service.CompanyService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class CompanyController {
@@ -58,8 +61,7 @@ public class CompanyController {
 	
 	@RequestMapping(value="/company/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		companyService.selectTab();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<CompanyDetails> selectTab(TableModel table){
+		return companyService.selectTab(table);
 	}
 }

@@ -10,10 +10,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 import ndm.miniwms.dao.StockInventoryMapper;
-import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.StockInventory;
 import ndm.miniwms.service.IStockInventoryService;
-import ndm.miniwms.vo.TableModelVO;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Service("stockInventoryService")
 public class IStockInventoryServiceImpl implements IStockInventoryService{
@@ -29,6 +29,11 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 	public int delById(Integer id) {
 		return this.dao.delById(id);
 	}
+	
+	@Override
+    public int delete(Integer id) {
+        return this.delById(id);
+    }
 
 	@Override
 	public int update(StockInventory stockInventory) {
@@ -46,8 +51,8 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 	}
 
 	@Override
-	public List<StockInventory> selectTab(TableModelVO tableModelVO) {
-		PageHelper.startPage(tableModelVO.getStart(), tableModelVO.getLength());
+	public Pagination<StockInventory> selectTab(TableModel tableModelVO) {
+		PageHelper.startPage(tableModelVO.getPageNum(), tableModelVO.getLength());
 	    List<StockInventory> list = this.dao.selectTab();
 	    //��PageInfo�Խ�����а�װ
 	    PageInfo<StockInventory> page = new PageInfo<StockInventory>(list);
@@ -62,7 +67,22 @@ public class IStockInventoryServiceImpl implements IStockInventoryService{
 	    System.out.println(page.getLastPage());
 	    System.out.println(page.isHasPreviousPage());
 	    System.out.println(page.isHasNextPage());
-		return list;
+	    Pagination<StockInventory> p = new Pagination<StockInventory>();
+	    p.setData(list);
+	    p.setRecordsFiltered((int)page.getTotal());
+	    p.setRecordsTotal((int)page.getTotal());
+	    p.setDraw(tableModelVO.getDraw());
+		return p;
+	}
+
+	@Override
+	public StockInventory selectItem(Integer itemId) {
+		return this.dao.selectItem(itemId);
+	}
+
+	@Override
+	public int updateQuantity(StockInventory stockInventory) {
+		return this.dao.updateQuantity(stockInventory);
 	}
 
 }

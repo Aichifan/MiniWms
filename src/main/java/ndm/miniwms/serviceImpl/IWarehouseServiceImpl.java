@@ -3,6 +3,8 @@ package ndm.miniwms.serviceImpl;
 import java.util.List;
 
 import ndm.miniwms.pojo.Warehouse;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 public interface IWarehouseServiceImpl {
 	public List<Warehouse> all();
@@ -15,5 +17,5 @@ public interface IWarehouseServiceImpl {
 
 	public void selectById(Integer id);
 
-	public void selectTab();
+	public Pagination<Warehouse> selectTab(TableModel model);
 }

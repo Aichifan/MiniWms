@@ -1,12 +1,8 @@
 package ndm.miniwms.controller;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ndm.miniwms.pojo.BrandDetails;
 import ndm.miniwms.service.BrandService;
 import ndm.miniwms.vo.Message;
+import ndm.miniwms.vo.Pagination;
+import ndm.miniwms.vo.TableModel;
 
 @Controller
 public class BrandController {
@@ -62,9 +60,8 @@ public class BrandController {
 	
 	@RequestMapping(value="/brand/page",method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<Message> selectTab(){
-		brandService.selectTab();
-		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
+	public Pagination<BrandDetails> selectTab(TableModel table){
+		return brandService.selectTab(table);
 	}
 
 }

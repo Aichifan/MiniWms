@@ -10,10 +10,9 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
 import ndm.miniwms.dao.StockInMapper;
-import ndm.miniwms.pojo.CompanyDetails;
 import ndm.miniwms.pojo.StockIn;
 import ndm.miniwms.service.IStockInService;
-import ndm.miniwms.vo.TableModelVO;
+import ndm.miniwms.vo.TableModel;
 
 @Service("stockInService")
 public class IStockInServiceImpl implements IStockInService{
@@ -46,7 +45,7 @@ public class IStockInServiceImpl implements IStockInService{
 	}
 
 	@Override
-	public List<StockIn> selectTab(TableModelVO tableModelVO) {
+	public List<StockIn> selectTab(TableModel tableModelVO) {
 		PageHelper.startPage(tableModelVO.getStart(), tableModelVO.getLength());
 	    List<StockIn> list = stockInMapperDao.selectTab();
 	    //��PageInfo�Խ�����а�װ
@@ -63,6 +62,11 @@ public class IStockInServiceImpl implements IStockInService{
 	    System.out.println(page.isHasPreviousPage());
 	    System.out.println(page.isHasNextPage());
 		return list;
+	}
+
+	@Override
+	public int updateStatus(StockIn stockIn) {
+		return this.stockInMapperDao.updateStatus(stockIn);
 	}
 
 }
