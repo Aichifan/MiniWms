@@ -1,10 +1,12 @@
-package ndm.miniwms.dao;
+package ndm.miniwms.service;
 
 import java.util.List;
 
 import ndm.miniwms.pojo.StockIn;
+import ndm.miniwms.vo.TableModelVO;
 
-public interface StockInMapper {
+public interface IStockInService {
+
 	List<StockIn> all();
 	
 	int delById(Integer id);
@@ -15,5 +17,5 @@ public interface StockInMapper {
 	
 	StockIn selectById(Integer id);
 	
-	List<StockIn> selectTab();
+	List<StockIn> selectTab(TableModelVO tableModelVO);
 }
