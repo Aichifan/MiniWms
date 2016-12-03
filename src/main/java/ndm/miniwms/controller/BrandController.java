@@ -1,12 +1,8 @@
 package ndm.miniwms.controller;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ndm.miniwms.pojo.BrandDetails;
-import ndm.miniwms.service.impl.BrandService;
+import ndm.miniwms.service.BrandService;
 import ndm.miniwms.vo.Message;
 import ndm.miniwms.vo.Pagination;
 import ndm.miniwms.vo.TableModel;
@@ -51,7 +47,7 @@ public class BrandController {
 	@RequestMapping(value="/brand/del",method = RequestMethod.DELETE)
 	@ResponseBody
 	public ResponseEntity<Message> delete(Integer id){
-		brandService.delById(id);
+		brandService.delete(id);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	

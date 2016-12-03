@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="ndm.miniwms.dao.RoleHasMenuMapper" >
-	<resultMap id="BaseResultMap" type="ndm.miniwms.pojo.RoleHasMenu">
-		<id column="id" property="id" jdbcType="INTEGER" />
-		<result column="role_id" property="roleId" jdbcType="INTEGER" />
-		<result column="menu_id" property="menuId" jdbcType="INTEGER" />
-	</resultMap>
-
-	<delete id="delByRoleId" parameterType="java.lang.Integer" >
-    	delete from role_has_menu where role_id=#{id}
- 	</delete>
- 	
- 	<insert id="add" parameterType="ndm.miniwms.pojo.RoleHasMenu">
- 		insert into role_has_menu (role_id,menu_id) values (#{roleId},#{menuId})
- 	</insert>
-	
 </mapper>

@@ -16,4 +16,8 @@ public interface StockInventoryMapper {
 	StockInventory selectById(Integer id);
 	
 	List<StockInventory> selectTab();
+	
+	StockInventory selectItem(Integer itemId);
+	
+	int updateQuantity(StockInventory stockInventory);
 }

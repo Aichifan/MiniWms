@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ndm.miniwms.pojo.LocationDetails;
-import ndm.miniwms.service.impl.LocationService;
+import ndm.miniwms.service.LocationService;
 import ndm.miniwms.vo.Message;
 import ndm.miniwms.vo.Pagination;
 import ndm.miniwms.vo.TableModel;
@@ -47,7 +47,7 @@ public class LocationController {
 	@RequestMapping(value="/location/del",method = RequestMethod.DELETE)
 	@ResponseBody
 	public ResponseEntity<Message> delete(Integer id){
-		locationService.delById(id);
+		locationService.delete(id);
 		return new ResponseEntity<Message>(new Message(), HttpStatus.OK);
 	}
 	

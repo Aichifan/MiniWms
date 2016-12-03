@@ -27,33 +27,38 @@ public class StockInventoryServiceImpl implements IStockInventoryService{
 	}
 
 	@Override
-	public void update(StockInventory stockInventory) {
-		stockInventoryMapper.update(stockInventory);
+	public int update(StockInventory stockInventory) {
+		return stockInventoryMapper.update(stockInventory);
 	}
 
 	@Override
-	public void add(StockInventory stockInventory) {
-		stockInventoryMapper.add(stockInventory);
+	public int add(StockInventory stockInventory) {
+		return stockInventoryMapper.add(stockInventory);
 	}
 
 	@Override
-	public void delete(Integer id) {
-		stockInventoryMapper.delById(id);
+	public int delete(Integer id) {
+		return stockInventoryMapper.delById(id);
 	}
 
 	@Override
-	public void selectById(Integer id) {
-		stockInventoryMapper.selectById(id);
+	public StockInventory selectById(Integer id) {
+		return stockInventoryMapper.selectById(id);
 	}
+	
+	@Override
+    public StockInventory selectItem(Integer id) {
+        return stockInventoryMapper.selectById(id);
+    }
 
 	@Override
 	public Pagination<StockInventory> selectTab(TableModel table) {
 		PageHelper.startPage(table.getStart()/table.getLength() + 1,table.getLength());
 	    List<StockInventory> list = stockInventoryMapper.all();
 	    Pagination<StockInventory> pagination = new Pagination<>();
-	    //ÓÃPageInfo¶Ô½á¹û½øÐÐ°ü×°
+	    //ï¿½ï¿½PageInfoï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½×°
 	    PageInfo<StockInventory> page = new PageInfo<StockInventory>(list);
-	    //²âÊÔPageInfoÈ«²¿ÊôÐÔ
+	    //ï¿½ï¿½ï¿½ï¿½PageInfoÈ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    int total = (int)page.getTotal();
 	    pagination.setDraw(table.getDraw());
 	    pagination.setRecordsFiltered(this.all().size());
@@ -61,5 +66,16 @@ public class StockInventoryServiceImpl implements IStockInventoryService{
 	    pagination.setData(list);
 	    return pagination;
 	}
+
+    @Override
+    public int delById(Integer id) {
+        return this.delete(id);
+    }
+
+    @Override
+    public int updateQuantity(StockInventory stockInventory) {
+        return stockInventoryMapper.updateQuantity(stockInventory);
+    }
+
 
 }

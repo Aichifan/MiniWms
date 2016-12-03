@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ndm.miniwms.pojo.CompanyDetails;
-import ndm.miniwms.service.impl.CompanyService;
+import ndm.miniwms.service.CompanyService;
 import ndm.miniwms.vo.Message;
 import ndm.miniwms.vo.Pagination;
 import ndm.miniwms.vo.TableModel;

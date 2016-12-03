@@ -4,23 +4,23 @@ import java.util.Date;
 import java.util.List;
 
 public class StockIn {
-	private Integer id; // 入库单id
-	private Date created; // 创建时间
-	private Date modified; // 修改时间
-	private Integer supplierId; // 供应商id
-	private Date date; // 预计入库
-	private String status; // 状态
-	private Integer companyId; // 公司id
-	private Integer userId; // 创建人id
-	private String billnumber; // 订单编号
-	private String description; // 备注
-	private String customerBillnumber; // 客户订单编号
+	private Integer id; // 鍏ュ簱鍗昳d
+	private Date created; // 鍒涘缓鏃堕棿
+	private Date modified; // 淇敼鏃堕棿
+	private Integer supplierId; // 渚涘簲鍟唅d
+	private Date date; // 棰勮鍏ュ簱
+	private boolean status; // 鐘舵��
+	private Integer companyId; // 鍏徃id
+	private Integer userId; // 鍒涘缓浜篿d
+	private String billnumber; // 璁㈠崟缂栧彿
+	private String description; // 澶囨敞
+	private String customerBillnumber; // 瀹㈡埛璁㈠崟缂栧彿
 
-	private SupplierDetails supplierDetails;//供应商
-	private StockInventory stockInventory;//库存
-	private	List<StockInEntries> stockInEntriesList;//入库单明细
-	private CompanyDetails companyDetails;//公司
-	private CompanyUser companyUser;//用户
+	private SupplierDetails supplierDetails;//渚涘簲鍟�
+	private List<StockInventory> stockInventoryList;//搴撳瓨
+	private	List<StockInEntries> stockInEntriesList;//鍏ュ簱鍗曟槑缁�
+	private CompanyDetails companyDetails;//鍏徃
+	private CompanyUser companyUser;//鐢ㄦ埛
 
 	public SupplierDetails getSupplierDetails() {
 		return supplierDetails;
@@ -30,12 +30,12 @@ public class StockIn {
 		this.supplierDetails = supplierDetails;
 	}
 
-	public StockInventory getStockInventory() {
-		return stockInventory;
+	public List<StockInventory> getStockInventoryList() {
+		return stockInventoryList;
 	}
 
-	public void setStockInventory(StockInventory stockInventory) {
-		this.stockInventory = stockInventory;
+	public void setStockInventoryList(List<StockInventory> stockInventoryList) {
+		this.stockInventoryList = stockInventoryList;
 	}
 
 	public List<StockInEntries> getStockInEntriesList() {
@@ -102,11 +102,13 @@ public class StockIn {
 		this.date = date;
 	}
 
-	public String getStatus() {
+	
+
+	public boolean isStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 

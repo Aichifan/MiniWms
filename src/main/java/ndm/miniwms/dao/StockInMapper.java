@@ -12,4 +12,9 @@ public interface StockInMapper {
 	int update(StockIn stockIn);
 	
 	int add(StockIn stockIn);
+	
+	StockIn selectById(Integer id);
+	
+	List<StockIn> selectTab();
+	int updateStatus(StockIn stockIn);
 }

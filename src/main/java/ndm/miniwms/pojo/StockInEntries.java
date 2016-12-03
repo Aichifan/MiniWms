@@ -3,19 +3,23 @@ package ndm.miniwms.pojo;
 public class StockInEntries {
 	private Integer id; // 入库单明细id
 	private Integer inId; // 入库单id
-	private Integer itemId; // 商品id
-	private Integer quantity; // 数量
+	private Integer itemId; // 商品iditemId
+	private Integer quantity; // 数量quantity
 	private Integer locationId; // 库位id
-	private String UDF1; // 自定义参�?1
-	private String UDF2; // 自定义参�?2
-	private String UDF3; // 自定义参�?3
-	private String UDF4; // 自定义参�?4
-	private String UDF5; // 自定义参�?5
-	private String UDF6; // 自定义参�?6
+	private String UDF1; // 自定义参�?1
+	private String UDF2; // 自定义参�?2
+	private String UDF3; // 自定义参�?3
+	private String UDF4; // 自定义参�?4
+	private String UDF5; // 自定义参�?5
+	private String UDF6; // 自定义参�?6
 
 	private StockItem stockItem; //商品
 	private LocationDetails locationDetails; //库位
 	private StockIn stockIn; //入库单
+	
+	public StockInEntries() {
+		
+	}
 	
 	public StockItem getStockItem() {
 		return stockItem;
